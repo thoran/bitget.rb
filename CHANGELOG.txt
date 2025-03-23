@@ -1,0 +1,11 @@
+# 20250323
+0.1.0: Create directory structure and testing.
+1. + lib/Bitget/V2/Client.rb
+2. + lib/Bitget/Client.rb
+3. + lib/bitget.rb
+4. + Gemfile
+5. + test/*
+
+# 20250207, 08, 09
+0.0.0: Introduce V2 endpoints.
+1. + CoinMarketCap::V2::Client
