@@ -1,3 +1,8 @@
+# 20250326
+0.1.1: Add missing tests for supplying an argument to the coins endpoint.
+1. ~ test/client_test.rb
+2. ~ test/v2/client_test.rb
+
 # 20250323
 0.1.0: Create directory structure and testing.
 1. + lib/Bitget/V2/Client.rb

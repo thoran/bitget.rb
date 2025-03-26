@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitget.com/api/v2/spot/public/coins?coin=BTC
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - api_key0
+      Access-Sign:
+      - f5e63c0e23f5b9efe90e7fb6e3f088ea91e5f6b01fd1671549ce2a6c7cc0ae1c1017af1b1a512602523bab9be54643ca4d8c3d6001234a1098ac771c133b4ba0
+      Access-Timestamp:
+      - '1742728926'
+      Access-Passphrase:
+      - api_passphrase0
+      Content-Type:
+      - application/json
+      Locale:
+      - en-AU
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 23 Mar 2025 11:22:10 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Mbx-Used-Remain-Limit:
+      - '2'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=6XkMMAqqYANSC1_6_iIrX.dhmaUQL_eoaNB4CjvoNbU-1742728930-1.0.1.1-8vyoPffk8oIol7aoyThrPJo0gBIX0RGejdZ9vria9b9NUtnMzeHWmNuVEHO3nymF3.Mv8RoGvo3b7MqXil8MGzgvfn2jf9r.zMMjtpg3p3c;
+        path=/; expires=Sun, 23-Mar-25 11:52:10 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 924d8ca6b9be993f-FRA
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":"00000","msg":"success","requestTime":1742728930495,"data":[{"coinId":"1","coin":"BTC","transfer":"true","chains":[{"chain":"BTC","needTag":"false","withdrawable":"true","rechargeable":"true","withdrawFee":"0.00005","extraWithdrawFee":"0","depositConfirm":"1","withdrawConfirm":"1","minDepositAmount":"0.00001","minWithdrawAmount":"0.0005","browserUrl":"https://www.blockchain.com/explorer/transactions/btc/","contractAddress":null,"withdrawStep":"0","withdrawMinScale":"8","congestion":"normal"},{"chain":"LIGHTNING","needTag":"false","withdrawable":"true","rechargeable":"true","withdrawFee":"0.00001","extraWithdrawFee":"0","depositConfirm":"1","withdrawConfirm":"5","minDepositAmount":"0.000001","minWithdrawAmount":"0.00002","browserUrl":"","contractAddress":null,"withdrawStep":"0","withdrawMinScale":"8","congestion":"normal"},{"chain":"BEP20","needTag":"false","withdrawable":"true","rechargeable":"true","withdrawFee":"0.00000831","extraWithdrawFee":"0","depositConfirm":"15","withdrawConfirm":"15","minDepositAmount":"0.000001","minWithdrawAmount":"0.0000078","browserUrl":"https://bscscan.com/tx/","contractAddress":"0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c","withdrawStep":"0","withdrawMinScale":"8","congestion":"normal"}],"areaCoin":"no"}]}'
+  recorded_at: Sun, 23 Mar 2025 11:22:08 GMT
+recorded_with: VCR 6.3.1
