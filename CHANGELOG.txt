@@ -1,3 +1,8 @@
+# 20250329
+0.3.0: + bitget.rb.gemspec, README.md
+1. + bitget.rb.gemspec
+2. + README.md
+
 # 20250326, 29
 0.2.0: Add a separate response handler with logging and error handling.
 1. + Bitget::V2::Client#handle_request
