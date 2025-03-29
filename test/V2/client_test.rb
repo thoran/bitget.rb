@@ -34,5 +34,20 @@ describe Bitget::V2::Client do
         end
       end
     end
+
+    context "when an error occurs" do
+      it "logs then raises an error" do
+        VCR.use_cassette('v2/spot/public/coins-when_an_error_occurs') do
+          assert_raises(Bitget::Error) do
+            mocked_method = Minitest::Mock.new
+            mocked_method.expect(:call, nil, [], code: '418', message: "I'm a teapot", body: '')
+            client.stub(:log_error, mocked_method) do
+              client.spot_public_coins
+            end
+            mocked_method.verify
+          end
+        end
+      end
+    end
   end
 end

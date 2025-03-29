@@ -1,3 +1,12 @@
+# 20250326, 29
+0.2.0: Add a separate response handler with logging and error handling.
+1. + Bitget::V2::Client#handle_request
+2. + Bitget::V2::Client#do_request: Defer parsing the JSON to handle_request().
+3. ~ Bitget::V2::Client#spot_public_coins: Use handle_request().
+4. + Bitget::Error
+5. ~ Bitget::V2::Client: + class methods for logging (log_file_path, default_log_file_path, log_file_path, log_file, logger)
+6. ~ Bitget::V2::Client: + instance methods for logging (log_args?, log_request, log_error)
+
 # 20250326
 0.1.1: Add missing tests for supplying an argument to the coins endpoint.
 1. ~ test/client_test.rb
