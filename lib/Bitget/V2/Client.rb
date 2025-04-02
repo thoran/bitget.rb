@@ -1,13 +1,14 @@
 # Bitget/V2/Client.rb
 # Bitget::V2::Client
 
-require 'Hash/to_parameter_string'
+require 'fileutils'
 gem 'http.rb'; require 'http.rb'
 require 'json'
 require 'logger'
 require 'openssl'
 
 require_relative '../Error'
+require_relative '../../Hash/to_parameter_string'
 require_relative '../../Hash/x_www_form_urlencode'
 
 module Bitget

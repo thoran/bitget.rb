@@ -1,3 +1,14 @@
+# 20250402
+0.3.1: Fix missing libraries.
+1. + lib/Thoran/Hash/XWwwFormUrlEncode/x_www_form_urlencode.rb
+2. + lib/Thoran/String/UrlEncode/url_encode.rb
+3. ~ lib/String/url_encode.rb: 0.2.1 --> 0.3.0
+4. ~ Bitget::V2::Client: + require 'fileutils'
+5. ~ Bitget::V2::Client: + require_relative '../../Hash/to_parameter_string'
+6. + Bitget::VERSION
+7. ~ bitget.rb.gemspec: Use Bitget::VERSION
+8. + test/test_all.rb
+
 # 20250329
 0.3.0: + bitget.rb.gemspec, README.md
 1. + bitget.rb.gemspec

@@ -1,8 +1,10 @@
+require_relative './lib/Bitget/VERSION'
+
 Gem::Specification.new do |spec|
   spec.name = 'bitget.rb'
 
-  spec.version = '0.3.0'
-  spec.date = '2025-03-29'
+  spec.version = Bitget::VERSION
+  spec.date = '2025-04-02'
 
   spec.summary = "Access the Bitget API with Ruby."
   spec.description = "Access the Bitget API with Ruby."
