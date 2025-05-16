@@ -23,7 +23,7 @@ Or install it yourself as:
 
 ### Setup
 ```ruby
-bitget_client ||= Bitget::Client.new(
+bitget_client = Bitget::Client.new(
   api_key: 'api_key0',
   api_secret: 'api_secret0',
   api_passphrase: 'api_passphrase0'
@@ -97,9 +97,24 @@ bitget_client.spot_public_coins(coin: 'BTC')
 #  }
 ```
 
+### Get Account Information
+```ruby
+bitget_client.spot_account_info
+```
+
+### Get Account Assets
+```ruby
+bitget_client.spot_account_assets
+```
+```ruby
+bitget_client.spot_account_assets(coin: 'BTC')
+```
+
+See https://www.bitget.com/api-doc/spot/intro for further information on endpoint arguments
+
 ## Contributing
 
-1. Fork it ( https://github.com/thoran/bitget.rb/fork )
+1. Fork it (https://github.com/thoran/bitget.rb/fork)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

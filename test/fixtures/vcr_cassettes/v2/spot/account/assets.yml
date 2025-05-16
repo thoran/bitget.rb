@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitget.com/api/v2/spot/account/assets
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - wSHjOKfTMyscnLgja9T0LV6EDStU5dLcGxZkZh6I/gE=
+      Access-Timestamp:
+      - '1747391308332'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 May 2025 10:28:29 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Mbx-Used-Remain-Limit:
+      - '9'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=r0FQkGHxmXVQiWDJetXFYKORuuV_AfbxkINwPq.5Mac-1747391309-1.0.1.1-cyKJ.gaePhDX6vpYfaDvFBwwLwL_sot8dMo_2YyIlHtigFYEetYPWZ0LxUBKMwHKwwng7_pTqch7ZBCviYm7J10BCekvH3qURj9G78aLm1s;
+        path=/; expires=Fri, 16-May-25 10:58:29 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 940a30440b42d4d1-AMS
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":"00000","msg":"success","requestTime":1747391309583,"data":[{"coin":"BGB","available":"17.3437389000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738557485856"},{"coin":"USDT","available":"21.1664998863856000","limitAvailable":"0","frozen":"169.0000000000000000","locked":"0.0000000000000000","uTime":"1745585822827"},{"coin":"ETH","available":"0.0802576600000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738556862180"},{"coin":"LTC","available":"1.1075913000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738557185081"},{"coin":"BCH","available":"0.3329667000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738555774146"},{"coin":"ETC","available":"5.3594352000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738557060429"},{"coin":"BNB","available":"0.1824174000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738557557113"},{"coin":"LINK","available":"5.6122821000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738555306369"},{"coin":"TRX","available":"466.1688645000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738555541497"},{"coin":"XRP","available":"46.0368171000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738557185703"},{"coin":"UNI","available":"12.2666211000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738555777678"},{"coin":"AAVE","available":"0.4475520000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738557140365"},{"coin":"DOGE","available":"439.5846103000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738557048411"},{"coin":"SHIB","available":"7591185.4103055000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738557119527"},{"coin":"ICP","available":"16.0688151000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738556960705"},{"coin":"SOL","available":"0.5179815000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738557572004"},{"coin":"ADA","available":"151.2718058000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738555792317"},{"coin":"DOT","available":"23.2055712000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738555828732"},{"coin":"XLM","available":"324.7549200000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738557233057"},{"coin":"LDO","available":"61.9726653000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738557196378"},{"coin":"AVAX","available":"4.1886072000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738555819713"},{"coin":"CRO","available":"1079.9998191000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738557060513"},{"coin":"TON","available":"29.0009700000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738556944815"},{"coin":"FLOKI","available":"0.0098200000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1736075436665"},{"coin":"ALGO","available":"388.4112000000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738557056667"},{"coin":"XDC","available":"112.0212000000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1736979821897"},{"coin":"NEAR","available":"31.4485200000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738555816104"},{"coin":"APT","available":"19.1208600000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738555656863"},{"coin":"TAO","available":"0.3446550000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738556907344"},{"coin":"STETH","available":"0.0403596000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738557213799"},{"coin":"PEPE","available":"11063122.8030000000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738555745913"},{"coin":"KAS","available":"1060.9380000000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738555831913"},{"coin":"SUI","available":"35.6742900000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738556963625"},{"coin":"HBAR","available":"465.9435900000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738557104811"},{"coin":"VET","available":"3149.4274200000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738555679305"},{"coin":"POL","available":"353.7459000000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738557070767"},{"coin":"ONDO","available":"91.1887200000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738557509853"},{"coin":"JUP","available":"121.0987800000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738557538879"},{"coin":"ETHFI","available":"4.7229619900000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1747361484111"},{"coin":"OM","available":"20.5594200000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738557691178"},{"coin":"RENDER","available":"25.1548200000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738556984937"},{"coin":"GOAT","available":"26.5005050000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1737945512438"},{"coin":"WEETH","available":"0.0378621000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738557253701"},{"coin":"PNUT","available":"70.7645400000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1737938014346"},{"coin":"HYPE","available":"18.5546400000000000","limitAvailable":"0","frozen":"0.0000000000000000","locked":"0.0000000000000000","uTime":"1738557597878"}]}'
+  recorded_at: Fri, 16 May 2025 10:28:29 GMT
+recorded_with: VCR 6.3.1

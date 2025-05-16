@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.bitget.com/api/v2/spot/public/coins
+    uri: https://api.bitget.com/api/v2/spot/account/info
     body:
       encoding: US-ASCII
       string: ''
@@ -10,38 +10,36 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - application/json
+      - "*/*"
       User-Agent:
       - Ruby
       Access-Key:
       - "<API_KEY>"
       Access-Sign:
-      - f02d1c70d802b3a8285d17f7f16ea1dec39b2544ef59ca3b73c86b25c4271f68cc6c579ff2d04e4b25fa8fdaaf306ac7306492c39f6a2ca29a4fbf98ee77c395
+      - Irs8SCK6HuZIhZrUN2z98Wygdhus246n1X97DaNIqKQ=
       Access-Timestamp:
-      - '1742722142'
+      - '1747391313057'
       Access-Passphrase:
       - "<API_PASSPHRASE>"
       Content-Type:
       - application/json
-      Locale:
-      - en-AU
+      X-Channel-Api-Code:
+      - spot
   response:
     status:
-      code: 418
-      message: I'm a teapot
+      code: 200
+      message: OK
     headers:
       Date:
-      - Sun, 23 Mar 2025 09:29:06 GMT
+      - Fri, 16 May 2025 10:28:34 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Vary:
-      - Accept-Encoding
       X-Mbx-Used-Remain-Limit:
-      - '2'
+      - '0'
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
@@ -53,17 +51,17 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=xR_NvNr3ij9UsKUaiUe4EvzQkiu9nLSC2An1Q.KlL6k-1742722146-1.0.1.1-0InH6wpqd1C7fpq7J0NYsMzZgqwYjCZiDBB6m7Lr_BQs0MZj_jh3oEH8BO0WOBx3n0VG8t3IoK3ErbrSBp5KOzUPCMy2xdOfohcfudjBzhk;
-        path=/; expires=Sun, 23-Mar-25 09:59:06 GMT; domain=.api.bitget.com; HttpOnly;
+      - __cf_bm=bUhaN.S3dcMxwnsSmFYjnNtuclC2Ygrh8ynAG2lEvUc-1747391314-1.0.1.1-iVPjy_S9jGrmZXxlckgTVUfLoduQ8WA56LxX.XR2Jl9x.A8zTM.3gouJ0N8mAR3ipgVuuH7sVHPU5q4PqEnjpCjUNzy1RsvUZL5qaKfwdUo;
+        path=/; expires=Fri, 16-May-25 10:58:34 GMT; domain=.api.bitget.com; HttpOnly;
         Secure; SameSite=None
       X-Frame-Options:
       - SAMEORIGIN
       Server:
       - cloudflare
       Cf-Ray:
-      - 924ce7084efc5d7b-FRA
+      - 940a3061aaae0bc5-AMS
     body:
       encoding: ASCII-8BIT
-      string: ''
-  recorded_at: Sun, 23 Mar 2025 09:29:04 GMT
+      string: '{"code":"00000","msg":"success","requestTime":1747391314333,"data":{"userId":"7955878595","inviterId":null,"channelCode":"rvbt","channel":"aqkm","ips":"","authorities":["wtow","chow","smow","coow","taxw","p2pw","cpow","ttow","stow"],"parentId":7955878595,"traderType":"not_trader","regisTime":"1731418905000"}}'
+  recorded_at: Fri, 16 May 2025 10:28:34 GMT
 recorded_with: VCR 6.3.1

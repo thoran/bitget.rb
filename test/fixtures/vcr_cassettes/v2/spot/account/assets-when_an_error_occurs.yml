@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.bitget.com/api/v2/spot/public/coins
+    uri: https://api.bitget.com/api/v2/spot/account/assets
     body:
       encoding: US-ASCII
       string: ''
@@ -10,28 +10,28 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - application/json
+      - "*/*"
       User-Agent:
       - Ruby
       Access-Key:
       - "<API_KEY>"
       Access-Sign:
-      - f02d1c70d802b3a8285d17f7f16ea1dec39b2544ef59ca3b73c86b25c4271f68cc6c579ff2d04e4b25fa8fdaaf306ac7306492c39f6a2ca29a4fbf98ee77c395
+      - "/D6o1QU0oIKIJ4ZxcSd01CK0RpZRd10ZZ4gm+N6AcX0="
       Access-Timestamp:
-      - '1742722142'
+      - '1747391311500'
       Access-Passphrase:
       - "<API_PASSPHRASE>"
       Content-Type:
       - application/json
-      Locale:
-      - en-AU
+      X-Channel-Api-Code:
+      - spot
   response:
     status:
       code: 418
       message: I'm a teapot
     headers:
       Date:
-      - Sun, 23 Mar 2025 09:29:06 GMT
+      - Fri, 16 May 2025 10:28:32 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -41,7 +41,7 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Mbx-Used-Remain-Limit:
-      - '2'
+      - '9'
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
@@ -53,17 +53,17 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=xR_NvNr3ij9UsKUaiUe4EvzQkiu9nLSC2An1Q.KlL6k-1742722146-1.0.1.1-0InH6wpqd1C7fpq7J0NYsMzZgqwYjCZiDBB6m7Lr_BQs0MZj_jh3oEH8BO0WOBx3n0VG8t3IoK3ErbrSBp5KOzUPCMy2xdOfohcfudjBzhk;
-        path=/; expires=Sun, 23-Mar-25 09:59:06 GMT; domain=.api.bitget.com; HttpOnly;
+      - __cf_bm=Cl17XzqcdLc5u1BzCkVtrFsf8U6W0YWOvr4O6s8tMFk-1747391312-1.0.1.1-4Sk1oyNxzrn7rhmSOH0zyVNgs0Eq8eZ_IpX6gl.bMJamJkbOzJ8llL9y_NK2ekRqxBKDlZz0Hc_fUliiqWdAh48hawRBdWAKN5vuDaM8aBQ;
+        path=/; expires=Fri, 16-May-25 10:58:32 GMT; domain=.api.bitget.com; HttpOnly;
         Secure; SameSite=None
       X-Frame-Options:
       - SAMEORIGIN
       Server:
       - cloudflare
       Cf-Ray:
-      - 924ce7084efc5d7b-FRA
+      - 940a3057ce4c4f48-AMS
     body:
       encoding: ASCII-8BIT
       string: ''
-  recorded_at: Sun, 23 Mar 2025 09:29:04 GMT
+  recorded_at: Fri, 16 May 2025 10:28:33 GMT
 recorded_with: VCR 6.3.1

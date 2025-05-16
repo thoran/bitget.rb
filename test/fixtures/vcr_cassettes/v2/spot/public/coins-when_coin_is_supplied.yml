@@ -14,13 +14,13 @@ http_interactions:
       User-Agent:
       - Ruby
       Access-Key:
-      - api_key0
+      - "<API_KEY>"
       Access-Sign:
       - f5e63c0e23f5b9efe90e7fb6e3f088ea91e5f6b01fd1671549ce2a6c7cc0ae1c1017af1b1a512602523bab9be54643ca4d8c3d6001234a1098ac771c133b4ba0
       Access-Timestamp:
       - '1742728926'
       Access-Passphrase:
-      - api_passphrase0
+      - "<API_PASSPHRASE>"
       Content-Type:
       - application/json
       Locale:

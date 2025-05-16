@@ -1,3 +1,13 @@
+# 20250516
+0.4.0: Implement the first couple of private endpoints and fix authentication.
+1. + Bitget::V2::Client#spot_account_info
+2. + Bitget::V2::Client#spot_account_assets
+3. ~ Bitget::V2::Client#message: There were 3 possible paths depending on the verb, not 2.
+4. ~ Bitget::V2::Client#signature: The all-in-one method wasn't working.
+5. ~ Bitget::V2::Client#headers: + 'X-CHANNEL-API-CODE' => 'spot'
+6. ~ Bitget::V2::Client#do_request: + @timestamp = nil, so the client can be reused for subsequent requests.
+7. ~ test/helper.rb: Use VCR's built-in filters to remove senstive data.
+
 # 20250402
 0.3.1: Fix missing libraries.
 1. + lib/Thoran/Hash/XWwwFormUrlEncode/x_www_form_urlencode.rb

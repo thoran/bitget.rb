@@ -42,22 +42,33 @@ module Bitget
         end
       end # class << self
 
+      # Get Coin Info
+      # GET /api/v2/spot
       def spot_public_coins(coin: nil)
-        response = get(
-          path: '/spot/public/coins',
-          args: {
-            coin: coin
-          }
-        )
+        response = get(path: '/spot/public/coins', args: {coin: coin})
+        handle_response(response)
+      end
+
+      # Get Account Information
+      # GET /api/v2/spot/account/info
+      def spot_account_info
+        response = get(path: '/spot/account/info')
+        handle_response(response)
+      end
+
+      # Get Account Assets
+      # GET /api/v2/spot/account/assets
+      def spot_account_assets(**args)
+        response = get(path: '/spot/account/assets', args: args)
         handle_response(response)
       end
 
       private
 
       def initialize(api_key:, api_secret:, api_passphrase:)
-        @api_key = api_key.encode('UTF-8')
-        @api_secret = api_secret.encode('UTF-8')
-        @api_passphrase = api_passphrase.encode('UTF-8')
+        @api_key = api_key
+        @api_secret = api_secret
+        @api_passphrase = api_passphrase
       end
 
       def full_path(path)
@@ -70,30 +81,28 @@ module Bitget
       end
 
       def timestamp
-        @timestamp ||= Time.now.to_i.to_s
+        @timestamp ||= (Time.now.to_f * 1000).to_i.to_s
       end
 
       def message(verb:, path:, args:)
-        query_string = (
-          case verb
-          when 'GET'
-            args.to_parameter_string
-          when 'POST'
-            nil
+        case verb
+        when 'GET'
+          if args.empty?
+            [timestamp, verb, full_path(path)].join
           else
-            raise "The verb, #{verb}, is not acceptable."
+            query_string = args.to_parameter_string
+            [timestamp, verb, full_path(path), '?', query_string].join
           end
-        )
-        body = JSON.dump(args)
-        if query_string.nil?
+        when 'POST'
+          body = args.to_json
           [timestamp, verb, full_path(path), body].join
-        else
-          [timestamp, verb, full_path(path), '?', query_string, body].join
         end
       end
 
       def signature(message)
-        OpenSSL::HMAC.hexdigest('SHA512', @api_secret, message)
+        digest = OpenSSL::Digest.new('SHA256')
+        hmac = OpenSSL::HMAC.digest(digest, @api_secret, message)
+        Base64.strict_encode64(hmac)
       end
 
       def request_string(path)
@@ -106,9 +115,8 @@ module Bitget
           'ACCESS-SIGN' => signature,
           'ACCESS-TIMESTAMP' => timestamp,
           'ACCESS-PASSPHRASE' => @api_passphrase,
-          'Content-type' => 'application/json',
-          'locale' =>'en-AU',
-          'Accept' => 'application/json',
+          'Content-Type' => 'application/json',
+          'X-CHANNEL-API-CODE' => 'spot',
         }
       end
 
@@ -133,7 +141,9 @@ module Bitget
         log_request(verb: verb, request_string: request_string(path), args: args)
         message = message(verb: verb, path: path, args: args)
         signature = signature(message)
-        HTTP.send(verb.to_s.downcase, request_string(path), args, headers(signature))
+        headers = headers(signature)
+        @timestamp = nil
+        HTTP.send(verb.to_s.downcase, request_string(path), args, headers)
       end
 
       def get(path:, args: {})
