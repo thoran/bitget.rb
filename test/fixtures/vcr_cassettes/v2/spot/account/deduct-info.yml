@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitget.com/api/v2/spot/account/deduct-info
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - NLyHfwBP130jXzlboszLEOrIVwi54GpdkKVg6Qo7W3A=
+      Access-Timestamp:
+      - '1748166308198'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 25 May 2025 09:45:10 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '19'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=zTKKZr6JbA4LZfpmuZ2Helwn9p54T2TJ6bAShVmiDno-1748166310-1.0.1.1-ZycnkQqCI9deDRd20FZU7S_WKAvsAUZ6aqjyGu3mNXaS5so06CxP64vsy8FrfYCk1qUS7OTIsrrM7kd.pt48d8BSORlYVrgYJ6aXxmbZiEM;
+        path=/; expires=Sun, 25-May-25 10:15:10 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9454192fcd277970-AMS
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":"00000","msg":"success","requestTime":1748166310494,"data":{"deduct":"off"}}'
+  recorded_at: Sun, 25 May 2025 09:45:09 GMT
+recorded_with: VCR 6.3.1

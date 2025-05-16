@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitget.com/api/v2/spot/wallet/subaccount-deposit-records?subUid=123456
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - WGnudFD9aMOBUl9wdjArtm+PMUbeBUdgugVX+jTi85Q=
+      Access-Timestamp:
+      - '1747574808740'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:26:50 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '95'
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '19'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=3.uEyZmns65LfhqNPWtx7roBPnXAwf.8ceiN1gH_Bgk-1747574810-1.0.1.1-3kRhAIcKWRy0TDuNPgyWdBr44QhV9Cstz1tPbV0Y1t3dR5CfKZK6_4FcDmW0UcfeTX0ihjkF2TpVas6wlZ3jTBhi9nEO7Hv3B3XXHjy1eAo;
+        path=/; expires=Sun, 18-May-25 13:56:50 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941bb0425c9c380e-FRA
+    body:
+      encoding: UTF-8
+      string: '{"code": "00000","msg": "success","requestTime": 1654507973411,"data": [{"orderId": "1","tradeId": "1","coin": "USDT","size": "10.00000000","status": "success","toAddress": "0x51xxx","dest": "on_chain","chain": "erc20","fromAddress": "0x52xxx","cTime": "1653290769222","uTime": "1653290769222"}]}'
+  recorded_at: Sun, 18 May 2025 13:26:50 GMT
+recorded_with: VCR 6.3.1

@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.bitget.com/api/v2/spot/wallet/cancel-withdrawal
+    body:
+      encoding: UTF-8
+      string: '{"orderId":"INVALID","requestTime":null,"receiveWindow":null}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - i/d7VukvogPbX/GWcy9AEElHHk95pHZOwLeLJeFicSE=
+      Access-Timestamp:
+      - '1747574784688'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 418
+      message: I'm a teapot
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:26:26 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '119'
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '19'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=L1yzS_OlBVfZ_oLFG75r4mWz7hLWn.8WfrI6vOAukVE-1747574786-1.0.1.1-CIKNDleANdULHOcRhmcqMj9HYShJrTgZLTXW5UiX9jQSdsRXIs.cNt60.98tjnRf2gQx9LQVp8z.vKmI6DsJN.0D9evisiWYspGpadw8Tls;
+        path=/; expires=Sun, 18-May-25 13:56:26 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941bafac0c84d2a2-FRA
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Sun, 18 May 2025 13:26:26 GMT
+recorded_with: VCR 6.3.1

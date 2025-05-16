@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitget.com/api/v2/spot/wallet/withdrawal-records?endTime=1690197141868&startTime=1690196141868
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - kdOTqBvdL+ps4E/BgAOICQylXsP3Sfnaf5U+4MQ/o7U=
+      Access-Timestamp:
+      - '1747574791078'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:26:32 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '9'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=tTNDEOamuUt00enjQ.ebpUNLkkL4ajHuZ3azfinwmA4-1747574792-1.0.1.1-SHul33KY0.WXWOQU8_C9ZVD0px3GhG_cv4E8wve.Z2zRW8x24qKet2U3uvBaGPrZqBh0eIfuOL2qZ7eZYb6NPLZU3ZD9GxLYiClOzU3SP7o;
+        path=/; expires=Sun, 18-May-25 13:56:32 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941bafd3fed03383-FRA
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code": "00000","msg":"success","requestTime":1654507973411,"data":[{"orderId": "1","tradeId": "1","coin": "USDT","dest": "dest","clientOid": "123","type": "withdraw","tag": "","size": "10.00000000","fee": "-1.00000000","status": "success","toAddress": "1","fromAddress": "2","confirm": "100","chain": "erc20","cTime": "1653290769222","uTime": "1653290769222"}]}'
+  recorded_at: Sun, 18 May 2025 13:26:32 GMT
+recorded_with: VCR 6.3.1

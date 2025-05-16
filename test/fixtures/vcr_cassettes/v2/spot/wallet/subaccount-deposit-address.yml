@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitget.com/api/v2/spot/wallet/subaccount-deposit-address?chain=TRC20&coin=USDT&subUid=123456
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - q74iTZEmjB/9qTYVbBa3HmI65b8ui2NvlZcV6jZg/Ls=
+      Access-Timestamp:
+      - '1747823054678'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 21 May 2025 10:24:17 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '108'
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '19'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=IvVoSG6Zci92aE9NCbM1ig0DMSZiBN1R1cqI3gSqW4E-1747823057-1.0.1.1-L5ttMlcYExoD9Kh3OpE29kPMKtkBUGkb9Vb6ZRmHYNtfEwGBzAWHNioF51VPJwmTGvZy_WRCJQi46chZ_LIaMtQygc8UcYhUYYUdlVdJ7I8;
+        path=/; expires=Wed, 21-May-25 10:54:17 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 94335cfacd3dcfe7-MAD
+    body:
+      encoding: UTF-8
+      string: '{"code":"00000","msg":"success","requestTime":1747823057238,"data":{"coin":"USDT","address":"TFs7vLUp6Y3SfAa39vdi4XrZeTJohMHzz9","chain":"TRC20","tag":null,"url":"https://tronscan.org/#/transaction/"}}'
+  recorded_at: Wed, 21 May 2025 10:24:16 GMT
+recorded_with: VCR 6.3.1

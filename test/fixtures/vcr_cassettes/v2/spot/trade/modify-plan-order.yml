@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.bitget.com/api/v2/spot/trade/modify-plan-order
+    body:
+      encoding: UTF-8
+      string: '{"orderId":"123456","triggerPrice":"31000","executePrice":"31000","size":"0.002"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - VNGRcyzMzl1CncJ3xmQmmKd2aJPt9RPjNdr83CmiBQk=
+      Access-Timestamp:
+      - '1747574727211'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:25:28 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '100'
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '9'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=zeYNXJkCJIVrqLnDWm5bLO98vZSPClNciTQe0yUY1XA-1747574728-1.0.1.1-UdzlJfe4psT6iVBQvTU2Ey5cxy0Diouj0TMEpJNWAsgt_kLrPGfOQAESmkSs0yKmNbihstVEbZzKwCh1fSGFCV72OlHi3NVDGTxYPh_.wH4;
+        path=/; expires=Sun, 18-May-25 13:55:28 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941bae44a91165c5-FRA
+    body:
+      encoding: UTF-8
+      string: '{"code": "00000","msg": "success","requestTime": 1668134576535,"data": {"orderId": "121211212122","clientOid": "121211212122"}}'
+  recorded_at: Sun, 18 May 2025 13:25:28 GMT
+recorded_with: VCR 6.3.1

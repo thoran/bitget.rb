@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.bitget.com/api/v2/spot/wallet/transfer
+    body:
+      encoding: UTF-8
+      string: '{"fromAccount":"spot","toAccount":"isolated_margin","coin":"USDT","amount":"100","requestTime":null,"receiveWindow":null}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - wAtjPPrKvLPxOT3LW1k6bdkxfeeMhwMwJapkgnkx8X4=
+      Access-Timestamp:
+      - '1747574755594'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:25:57 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '96'
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '9'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=8aJ0eY3b74tksMi3XRyHa1xUjY7cfefEvN_9Fq2HxPM-1747574757-1.0.1.1-Sg4GpJyI_H4orBSAlZiQvNYKlOfjGUBGtAd2DetJRXawVAZpJhXImwPvdGdvmtLmEmKOq4tQ9ReDQFAYF.NeEmqTUfZ7.v51RtZw_GtQwVs;
+        path=/; expires=Sun, 18-May-25 13:55:57 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941baef62e690b83-AMS
+    body:
+      encoding: UTF-8
+      string: '{"code":"00000","msg":"success","requestTime":1747574756972,"data":{"transferId":"123456789", "clientOid":"123456789"}}'
+  recorded_at: Sun, 18 May 2025 13:25:57 GMT
+recorded_with: VCR 6.3.1

@@ -1,0 +1,95 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitget.com/api/v2/spot/trade/fills?symbol=BTCUSDT
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - tjPr8y4+BzbChItX9+Cj1DCFH3vbL8dr/hW5f7zc3y4=
+      Access-Timestamp:
+      - '1747574842438'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:27:23 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '9'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=Z9dAUBGOVxq4BWA8pEe2BXdklwniOZB3arUS_2tyrCM-1747574843-1.0.1.1-OTGDPPE7WogzNHniUG_4g9Wn4wSlcDnxLiEql49HlmMtvC2Vh_LOMWTMsSCEeq3t77yxsEG74LWR_BOkxOcke5MxXS9X639fnNylY_nUpEE;
+        path=/; expires=Sun, 18-May-25 13:57:23 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941bb11519e7b90c-AMS
+    body:
+      encoding: ASCII-8BIT
+      string: '
+        {
+          "code": "00000",
+          "msg": "success",
+          "requestTime": 1695865274510,
+          "data": [
+            {
+              "userId": "**********",
+              "symbol": "BTCUSDT",
+              "orderId": "12345678910",
+              "tradeId": "12345678910",
+              "orderType": "market",
+              "side": "buy",
+              "priceAvg": "13000",
+              "size": "0.0007",
+              "amount": "9.1",
+              "feeDetail": {
+                "deduction": "no",
+                "feeCoin": "BTC",
+                "totalDeductionFee": "",
+                "totalFee": "-0.0000007"
+              },
+              "tradeScope": "taker",
+              "cTime": "1695865232579",
+              "uTime": "1695865233027"
+            }
+          ]
+        }
+      '
+  recorded_at: Sun, 18 May 2025 13:27:24 GMT
+recorded_with: VCR 6.3.1
