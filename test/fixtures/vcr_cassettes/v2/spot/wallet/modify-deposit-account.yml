@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.bitget.com/api/v2/spot/wallet/modify-deposit-account
+    body:
+      encoding: UTF-8
+      string: '{"accountType":"spot","coin":"TRX"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - Ehlna8kdSkRazytUewQZCsgMT69UekuLRu9qO0bJZEw=
+      Access-Timestamp:
+      - '1747574795892'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:26:37 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '87'
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '19'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=zVt7GmYzOL9xP5wxYC5KHN.gZ.jYhFh2O5gCVMmRErk-1747574797-1.0.1.1-qoQ4hlhA_1io.WtiigLRlU2mKlWqH3OPyPzGPxBQcxigqZRpP7tA8cZQK6yDuQ6Y8d5yXs5c.RzjH57gdkjPU0dPly5xF5SSyOPkcFIqbXM;
+        path=/; expires=Sun, 18-May-25 13:56:37 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941baff21b6265c1-FRA
+    body:
+      encoding: UTF-8
+      string: '{"code": "00000","msg": "success","requestTime": 1683875302853,"data": "success"}'
+  recorded_at: Sun, 18 May 2025 13:26:37 GMT
+recorded_with: VCR 6.3.1

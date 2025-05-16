@@ -1,0 +1,97 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitget.com/api/v2/spot/trade/history-orders?symbol=BTCUSDT
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - O/U6GHlcz+4hFYHARx0aIRBhqd6WNtO+4yeeunce0UU=
+      Access-Timestamp:
+      - '1747574719398'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:25:20 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '19'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=COCwd1woEOCzFR6fyrkHgY0QoBamtjLpQOj9q8Di9KU-1747574720-1.0.1.1-9wxdn7FocLXZEY_9vjnlMpcpcI1u3UQHVW2TX6wRsJFvxlREbfCC.e9XG0rVxSPwvY5wIkVYiSfwlVHwsYq8hwfpJt2F_Q4ydOzdpMfCuI4;
+        path=/; expires=Sun, 18-May-25 13:55:20 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941bae13fb956645-AMS
+    body:
+      encoding: ASCII-8BIT
+      string: '
+        {
+            "code": "00000",
+            "message": "success",
+            "requestTime": 1747574720767,
+            "data": [
+                {
+                    "userId": "*********",
+                    "symbol": "ETHUSDT",
+                    "orderId": "*****************************",
+                    "clientOid": "*****************************",
+                    "price": "0",
+                    "size": "20.0000000000000000",
+                    "orderType": "market",
+                    "side": "buy",
+                    "status": "filled",
+                    "priceAvg": "1598.1000000000000000",
+                    "baseVolume": "0.0125000000000000",
+                    "quoteVolume": "19.9762500000000000",
+                    "enterPointSource": "WEB",
+                    "feeDetail": "{\"newFees\":{\"c\":0,\"d\":0,\"deduction\":false,\"r\":-0.112079256,\"t\":-0.112079256,\"totalDeductionFee\":0},\"USDT\":{\"deduction\":false,\"feeCoinCode\":\"ETH\",\"totalDeductionFee\":0,\"totalFee\":-0.1120792560000000}}",
+                    "orderSource": "market",
+                    "cTime": "1698736299656",
+                    "uTime": "1698736300363",
+                    "tpslType": "normal",
+                    "cancelReason": "",
+                    "triggerPrice": null
+                }
+            ]
+        }
+      '
+  recorded_at: Sun, 18 May 2025 13:25:20 GMT
+recorded_with: VCR 6.3.1

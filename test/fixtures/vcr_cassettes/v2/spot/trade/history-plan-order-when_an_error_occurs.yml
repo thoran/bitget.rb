@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitget.com/api/v2/spot/trade/history-plan-order?endTime=1747755739537&startTime=1747754739537&symbol=INVALID
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - QvnoP7/5yML/QOmBo9IhkKoclXIQGLtJgzjCkCETqFM=
+      Access-Timestamp:
+      - '1747574827974'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 418
+      message: I'm a teapot
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:27:09 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '95'
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '19'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=Q9njiVVLbIKdxaQf6DeSp2dwV8UlE6c7s3NsRSgSSm0-1747574829-1.0.1.1-VQfPpVK3QqRITpyph9InBmfkpWae.saBg92dWudhbKoaBcFlS18nFfU7snmvEz5_TCRJARUPEg__Mm15bmVsz1fl84r8pwR6KxcMcxyz5BE;
+        path=/; expires=Sun, 18-May-25 13:57:09 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941bb0ba8cfe1e4a-FRA
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Sun, 18 May 2025 13:27:09 GMT
+recorded_with: VCR 6.3.1

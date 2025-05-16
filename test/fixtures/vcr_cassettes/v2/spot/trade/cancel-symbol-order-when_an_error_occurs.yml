@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.bitget.com/api/v2/spot/trade/cancel-symbol-order
+    body:
+      encoding: UTF-8
+      string: '{"symbol":"INVALID","requestTime":null,"receiveWindow":null}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - kWzE4rztbFvRTOemRfAKFZMG/d58EvHoo4bSMwIcC4Q=
+      Access-Timestamp:
+      - '1747574757178'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 418
+      message: I'm a teapot
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:25:58 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '97'
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '19'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=XGmmzQ3Pc2_3s4GzqeVCgQlrs24zix9CfpKCWvGmn2I-1747574758-1.0.1.1-KTKy7o3LjTblZSfj_mg0_bAsGsuzJoKBAkEfnZ3OCAz9fd750PBIE7wCnhaowTQt9.Zgcb7sZy11fDYPO1KUfmpzbWPjMLJ7K7iKgbJAuN8;
+        path=/; expires=Sun, 18-May-25 13:55:58 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941baefff823bbc2-FRA
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Sun, 18 May 2025 13:25:58 GMT
+recorded_with: VCR 6.3.1

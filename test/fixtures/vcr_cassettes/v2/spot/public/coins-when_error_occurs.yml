@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitget.com/api/v2/spot/public/coins?coin=INVALID
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - mcKODZxzN0xrD5TLM4W2TIDbIpZAXglJ2y7huWUttvU=
+      Access-Timestamp:
+      - '1748170741314'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Sun, 25 May 2025 10:59:03 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '89'
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '2'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=1e4jl3L2o21E.DGsV864rO0V9deNiRmMHZ72ZvdyDQA-1748170743-1.0.1.1-LbLJ7FpkTNNApnRXvf2ofO0RMnGNh_NGAR4o9OQJJq3FpxB58BsysBtDTogff3bvEb.M0QJTjzV_ShwtcSxqxbD11_YjJTUyvnBBUa5iPQE;
+        path=/; expires=Sun, 25-May-25 11:29:03 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9454856bfd3337c0-AMS
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJjb2RlIjoiNDAwMzQiLCJtc2ciOiLlj4LmlbAgSU5WQUxJRCDkuI3lrZjlnKgiLCJyZXF1ZXN0VGltZSI6MTc0ODE3MDc0MzgwNSwiZGF0YSI6bnVsbH0=
+  recorded_at: Sun, 25 May 2025 10:59:02 GMT
+recorded_with: VCR 6.3.1

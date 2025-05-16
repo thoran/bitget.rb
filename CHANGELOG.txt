@@ -1,3 +1,77 @@
+# 20250526
+0.5.0: Implement all remaining spot endpoints and fix authenticated POST requests.
+1. ~ Bitget::V2::Client#log_request: + headers: argument
+2. ~ Bitget::V2::Client#do_request: Removed nil values (Double-check this isn't being done elsehwere.)
+3. ~ Bitget::V2::Client#do_request: Sorted arguments as per Bitget API requirements.
+4. ~ Bitget::V2::Client#do_request: + @use_logging
+5. ~ Bitget::V2::Client#do_request: + headers to call to log_request
+6. ~ Bitget::V2::Client#do_request: @timestamp = nil, so that the client instance may be able to be re-used.
+Added the following 'Market' methods:
+7. + Bitget::V2::Client#spot_public_symbols
+8. + Bitget::V2::Client#spot_market_vip_fee_rate
+9. + Bitget::V2::Client#spot_market_tickers
+10. + Bitget::V2::Client#spot_market_merge_depth
+11. + Bitget::V2::Client#spot_market_orderbook
+12. + Bitget::V2::Client#spot_market_candles
+13. + Bitget::V2::Client#spot_market_history_candles
+14. + Bitget::V2::Client#spot_market_fills
+16. + Bitget::V2::Client#spot_market_fills_history
+Added the following 'Trade' methods:
+16. + Bitget::V2::Client#spot_trade_place_order
+17. + Bitget::V2::Client#spot_trade_cancel_replace_order
+18. + Bitget::V2::Client#spot_trade_batch_cancel_replace_order
+19. + Bitget::V2::Client#spot_trade_cancel_order
+20. + Bitget::V2::Client#spot_trade_batch_orders
+21. + Bitget::V2::Client#spot_trade_batch_cancel_order
+22. + Bitget::V2::Client#spot_trade_cancel_symbol_order
+23. + Bitget::V2::Client#spot_trade_order_info
+24. + Bitget::V2::Client#spot_trade_unfilled_orders
+25. + Bitget::V2::Client#spot_trade_history_orders
+26. + Bitget::V2::Client#spot_trade_fills
+27. + Bitget::V2::Client#spot_trade_place_plan_order
+28. + Bitget::V2::Client#spot_trade_modify_plan_order
+29. + Bitget::V2::Client#spot_trade_cancel_plan_order
+30. + Bitget::V2::Client#spot_trade_current_plan_order
+31. + Bitget::V2::Client#spot_trade_plan_sub_order
+32. + Bitget::V2::Client#spot_trade_history_plan_order
+33. + Bitget::V2::Client#spot_trade_batch_cancel_plan_order
+Added the following 'Account' methods:
+34. + Bitget::V2::Client#spot_account_subaccount_assets
+35. + Bitget::V2::Client#spot_account_bills
+36. + Bitget::V2::Client#spot_account_sub_main_trans_record
+37. + Bitget::V2::Client#spot_account_transfer_records
+38. + Bitget::V2::Client#spot_account_switch_deduct
+39. + Bitget::V2::Client#spot_account_deduct_info
+Added the following 'Wallet' methods:
+40. + Bitget::V2::Client#spot_wallet_modify_deposit_account
+41. + Bitget::V2::Client#spot_wallet_transfer
+42. + Bitget::V2::Client#spot_wallet_transfer_coin_info
+43. + Bitget::V2::Client#spot_wallet_subaccount_transfer
+44. + Bitget::V2::Client#spot_wallet_withdrawal
+45. + Bitget::V2::Client#spot_wallet_deposit_address
+46. + Bitget::V2::Client#spot_wallet_subaccount_deposit_address
+47. + Bitget::V2::Client#spot_wallet_cancel_withdrawal
+48. + Bitget::V2::Client#spot_wallet_subaccount_deposit_records
+49. + Bitget::V2::Client#spot_wallet_withdrawal_records
+50. + Bitget::V2::Client#spot_wallet_deposit_records
+51. ~ Bitget::V2::Client: + attr_accessors for API keys/secrets
+52. + Bitget::V2::Client#log_response
+53. ~ Bitget::V2::Client#handle_response: Use log_response().
+54. ~ Bitget::V2::Client: + @use_logging to be able to turn logging on and off.
+55. - lib/Hash/to_parameter_string.rb. Just use lib/Hash/x_www_form_urlencode.
+56. ~ Bitget::V2::Client#message: /to_parameter_string/x_www_form_urlencode/
+57. ~ test/lib/V2/client_test.rb: Test all spot endpoints, error handling, and logging.
+58. ~ Bitget::V2::Client: Document all endpoint methods with YARD format comments roughly in the form:
+# Method Name
+# HTTP_METHOD /api/v2/path
+#
+# Rate Limit: X times/Ys
+# Note: Description
+#
+# @param name [Type] Required/Optional. Description
+# @return [Type] Response containing:
+#   - field [Type] Description
+
 # 20250516
 0.4.0: Implement the first couple of private endpoints and fix authentication.
 1. + Bitget::V2::Client#spot_account_info

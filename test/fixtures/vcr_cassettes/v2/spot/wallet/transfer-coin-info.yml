@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitget.com/api/v2/spot/wallet/transfer-coin-info?fromType=spot&toType=isolated_margin
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - C2PEJ20SI9hkDImar1w8KX7U6XlcDNUN3fhDLH4npKg=
+      Access-Timestamp:
+      - '1747820469545'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 21 May 2025 09:41:12 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Mbx-Used-Remain-Limit:
+      - '19'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=KKGRMJULM42__Atg5YBciajmqYq9QTm7R91a7txVNWQ-1747820472-1.0.1.1-d6T_CdRLODmw0wI7ly2wBqH12714TLJJ9HaYaQPo7G6A8Q7BH7wkp3MvpdPgf37B7vR3YlAl9mhdhA9jaZ.6LlU_H3dc4eBFNbjCydVbGMA;
+        path=/; expires=Wed, 21-May-25 10:11:12 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 94331ddcc9092e37-MRS
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":"00000","msg":"success","requestTime":1747820471929,"data":["AGLD","LVL","SCR","GLM","RAY","NEAR","AUDIO","BBO","WLD","ZORA","HNT","ETHFI","ZRO","VELODROME","HALO","GME","RBN","MDAO","ZRX","WING","BCH","GPTOLD","JST","CEL","HOT","GMT","BEER","AR","TSTBSC","GMX","CHILLGUY","SEI","BB","JTO","FLM","PROMPT","VELA","GNS","VANRY","THE","BIGTIME","S","CFX","T","BABYDOGE","W","X","SFP","ACA","ACE","JUP","ACH","BEL","MINA","TIA","VTHO","DRIFT","RED","ARBINU","ACT","WOO","ACX","BLUR","REN","STRK","ADA","STORJ","VIRTUAL","STARL","LADYS","RARE","PAXG","REZ","CHR","ELX","WAVES","CHZ","XRP","FLOKI","JASMY","BGB","FIDA","SAND","OCEAN","UMA","COOKIE","ENA","MUBARAK","ENJ","PEAQ","SOLV","SOLS","OAX","GRT","RATS","BABY","GRV","ENS","KAIA","MYRO","UNI","DEGEN","TLM","POGAI","LUNC","LUNA","XTZ","ZYB","FORM","EOS","BIO","RIF","WOJAK","SKL","SLERF","GTC","BRETT","HOOK","FLOW","MEME","SLP","NXPC","ID","DOG","GUN","IO","IP","DOT","1INCH","CHESS","TON","INIT","PNUT","TURBO","UNFI","FTM","FTN","MAV","FTT","RLC","PHB","DPX","ARKM","ATOM","PENDLE","QUICK","BLZ","ORBS","MBL","SNT","SNX","RLY","TAIKO","L3","API3","BMT","ROSE","COW","GLMR","SATS","SOL","ETC","BNB","OGN","CELR","ETH","NEO","CELO","AUCTION","BADGER","LAYER","MAVIA","HIGH","TRB","ALT","NEIROCTO","BNX","ORDI","TRU","KAON","GRASS","ME","NFP","TRX","SIGN","MDT","PUFFER","AERGO","AMP","ORCA","MOCA","HIFI","USTC","BERA","RON","VANA","HIPPO","EGLD","PLUME","KAS","TRUMP","MEW","SPELL","PUNDIX","LOOKS","FXS","CRO","CRV","BAKE","FLUX","ALCH","RPL","LDO","MAGIC","QNT","ALICE","OG","AIDOGE","OM","OP","NIL","ZEREBRO","TUT","APE","SSV","PI","ARPA","MATIC","APT","STG","SHIB","IOTX","FRONT","KDA","PIXFI","STO","STX","DENT","PYTH","AI16Z","MBOX","BLAST","BSV","IOST","SUI","CAKE","BAND","POL","SUN","ASTR","BTC","TWT","RSR","PARTI","ARB","REEF","AIXBT","ARK","LOKA","KEY","ONE","RENDER","ANKR","SUSHI","ONT","DYM","MANA","HYPER","NMR","MKR","ATH","LIT","ICP","TLOS","TNSR","POLYX","KMNO","XAI","LOOM","IMGNAI","DOGE","DUSK","ALPHA","SXP","HBAR","BWB","SXT","PEPE","ONDO","DOGS","CTSI","KAVA","C98","OSMO","SHELL","NTRN","MEMEFI","SYN","NOM","COCOS","STRAX","NOT","GAL","GAS","BOME","SONIC","XCN","WAL","ORN","MASK","AAVE","OBOL","BONK","PERP","XDC","BONE","BOND","MOODENG","MOG","HYPE","LQTY","BICO","HEI","PIXEL","ZETA","MELANIA","HMSTR","YGG","PEOPLE","FARTCOIN","AXS","ZIL","SYRUP","MONG","XEN","WCT","COMP","HAEDAL","UXLINK","RUNE","PENGU","ALPINE","LEVER","IDEX","ZK","AVAX","LISTA","USUAL","ZKJ","GOAT","BANANA","CARV","KNC","CATS","PROM","OMNI1","PONKE","OVR","CATI","LPT","ORDER","KAITO","RDNT","XAUT","PORTO","PYR","AIOLD","WAXP","ULTI","DAI","SWARMS","AVAIL","FET","DAR","LRC","CORE","VINE","TAO","MTL","ALPACA","USDT","OXT","SAGA","EDU","JOE","LSK","BEAM","IMX","WIF","USDE","LTC","USDC","METIS","WIN","STETH","INJ","DYDX","AGIX","MUBI","LINA","KERNEL","GRIFFAIN","XLM","LINK","QTUM","CYBER","SUPER","EIGEN","KSM","FIL","STMX","RNDR","GALA","VIB","BAN","FIS","RAD","BAT","MOVE","MOVR","COTI"]}'
+  recorded_at: Wed, 21 May 2025 09:41:11 GMT
+recorded_with: VCR 6.3.1

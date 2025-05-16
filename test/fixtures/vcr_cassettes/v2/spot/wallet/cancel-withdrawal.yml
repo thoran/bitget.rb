@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.bitget.com/api/v2/spot/wallet/cancel-withdrawal
+    body:
+      encoding: UTF-8
+      string: '{"orderId":"123456"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - Gg7CUiOAvaE4tpWOjPE/NT12Y8xlYbUGtlUcl4wcfQY=
+      Access-Timestamp:
+      - '1747790261810'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 21 May 2025 01:17:43 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '119'
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '19'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=DaHdBg0qmxS8NB9JbqKLfbHBJt1b.IG2jg90iZGiV5k-1747790263-1.0.1.1-NPBtRZgfx2Xw0e.V6fRIxBihOMmeNmi4f75j7OHA8.3SlpAeynrJENjHvNZ.jO4Cu92di6lHwsjH0awt7IoHKdwJUbpnv_YqhI01DjUUsFU;
+        path=/; expires=Wed, 21-May-25 01:47:43 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 94303c5a98a4b1fb-AMS
+    body:
+      encoding: UTF-8
+      string: '{"data":"success"}'
+  recorded_at: Wed, 21 May 2025 01:17:43 GMT
+recorded_with: VCR 6.3.1

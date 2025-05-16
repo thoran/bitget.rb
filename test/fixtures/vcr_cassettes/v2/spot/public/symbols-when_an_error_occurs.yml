@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitget.com/api/v2/spot/public/symbols
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - EGw74AVdaFFQ+y3u/Fk/0znkMdpaA3jFu9uyymWg2D4=
+      Access-Timestamp:
+      - '1747574810365'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 418
+      message: I'm a teapot
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:26:51 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Mbx-Used-Remain-Limit:
+      - '19'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=qOo_lcVnVqoLzt62JdGIZpufzP6ZMGTzLjsgYfS24Lo-1747574811-1.0.1.1-4_9XEZW7pbwo2BnL0Mb2alwlqygZNg6kAZP320eHP5VeWfcTRpNajHJ5H7hPpzEnsPNBOlrgmuIeNimvlWg414QBvZrr9GMIwPh8vS6RcZU;
+        path=/; expires=Sun, 18-May-25 13:56:51 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941bb04c89c99df9-AMS
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+  recorded_at: Sun, 18 May 2025 13:26:51 GMT
+recorded_with: VCR 6.3.1

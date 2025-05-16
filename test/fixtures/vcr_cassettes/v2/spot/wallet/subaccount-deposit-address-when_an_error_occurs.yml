@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitget.com/api/v2/spot/wallet/subaccount-deposit-address?chain=INVALID&coin=INVALID&subUid=INVALID
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - XF3q7A7xK/HSqDTYgrMyiPUF0GZ+ImKKtpRf6VyQctI=
+      Access-Timestamp:
+      - '1747574778277'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 418
+      message: I'm a teapot
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:26:19 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '95'
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '19'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=Sj3MPtOXB8.37Fh6IZ9aPxnQo77zDu9ytvHvf822cbw-1747574779-1.0.1.1-t83im86sD2MxL.Fo3lu5hCejLvZ6ii3c82YgZqx1cv0v4e8maCbXxYBObgaSWHwt02ZlPGuw1imke5gxmwkt_6KLwfy8lCQt63pq9dZqfPk;
+        path=/; expires=Sun, 18-May-25 13:56:19 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941baf840edc1cc9-FRA
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Sun, 18 May 2025 13:26:19 GMT
+recorded_with: VCR 6.3.1

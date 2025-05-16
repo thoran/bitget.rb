@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.bitget.com/api/v2/spot/trade/cancel-replace-order
+    body:
+      encoding: UTF-8
+      string: '{"symbol":"BTCUSDT","price":"31000","size":"0.001","clientOid":null,"orderId":"123456","newClientOid":null,"presetTakeProfitPrice":null,"executeTakeProfitPrice":null,"presetStopLossPrice":null,"executeStopLossPrice":null,"requestTime":null,"receiveWindow":null}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - 6qGGtxKDAtsvdd1kWFMRHAufaaOXLdqpV+GfnSEvUXs=
+      Access-Timestamp:
+      - '1747574855113'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:27:36 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '4'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=nH_tocLnrn_8BWtGwSixOEjkfQ1lMuNSkKQmc1OLEEA-1747574856-1.0.1.1-Z1aIP_9Ky6bdDi5wkYyw_AnKx42lGEKgKYCQWAPNFfSS8T6L41RvVUMpgVZm4rd4mFkEf3IPxFUk2XlsJDjN8BaplVWXMtS1z75vYlkfssI;
+        path=/; expires=Sun, 18-May-25 13:57:36 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941bb16459c220ec-AMS
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJjb2RlIjoiMDAwMDAiLCJtc2ciOiJzdWNjZXNzIiwicmVxdWVzdFRpbWUiOjE3NDc1NzQ4NTY1MTAsImRhdGEiOnsib3JkZXJJZCI6IjEyMzQ1NiIsImNsaWVudE9pZCI6bnVsbCwic3VjY2VzcyI6ImZhaWx1cmUiLCJtc2ciOiLor6XorqLljZXlt7LmiJDkuqTmiJbogIXlt7LmkqTljZUifX0=
+  recorded_at: Sun, 18 May 2025 13:27:36 GMT
+recorded_with: VCR 6.3.1

@@ -1,0 +1,102 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitget.com/api/v2/spot/account/subaccount-assets
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - Y/EzeO3ztm2Pvhr3juGPwjJ9GHryNWstcknJTKB1r/o=
+      Access-Timestamp:
+      - '1747574760292'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:26:01 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '9'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=hEOPYTGarzAMO.dskYYXZ418H69ZBOaJkUeTkj7hYoc-1747574761-1.0.1.1-vxPsFJf2OciFtkQ6qv1JZ8rjb0H1896Urk3Ut1o15_0wvrWqxW4s9vviOmxmhECKu5JyqdTo7UhCay_DJI3v8WQDiRdNoW9Wql6_lHDRTEk;
+        path=/; expires=Sun, 18-May-25 13:56:01 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941baf13caec5d67-FRA
+    body:
+      encoding: ASCII-8BIT
+      string: '
+{
+  "code": "00000",
+  "message": "success",
+  "requestTime": 1695808949356,
+  "data": [
+    {
+      "id": 1111,
+      "userId": 1234567890,
+      "assetsList": [
+        {
+          "coin": "BTC",
+          "available": "1.1",
+          "limitAvailable": "12.1",
+          "frozen": "0",
+          "locked": "1.1",
+          "uTime": "1337654897651"
+        }
+      ]
+    },
+    {
+      "id": 2222,
+      "userId": 1234567890,
+      "assetsList": [
+        {
+          "coin": "ETH",
+          "available": "12.1",
+          "limitAvailable": "12.1",
+          "frozen": "0",
+          "locked": "1.1",
+          "uTime": "1337654897651"
+        }
+      ]
+    }
+  ]
+}'
+  recorded_at: Sun, 18 May 2025 13:26:01 GMT
+recorded_with: VCR 6.3.1

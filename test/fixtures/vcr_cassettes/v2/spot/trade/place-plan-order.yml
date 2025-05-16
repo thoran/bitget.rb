@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.bitget.com/api/v2/spot/trade/place-plan-order
+    body:
+      encoding: UTF-8
+      string: '{"executePrice":"30000","orderType":"limit","side":"buy","size":"0.001","symbol":"BTCUSDT","triggerPrice":"30000","triggerType":"mark_price"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - c+IWW0SjZh0ssk0KCdQKWRvrwtGZvpndXw8FtI18FKA=
+      Access-Timestamp:
+      - '1747754726548'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 20 May 2025 15:25:29 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '9'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=QvsBwTcrpXPBbDnPZAMvhfYviKZ2zBLvKc8ML4Czly8-1747754729-1.0.1.1-QULWhmlCeCvXcgxdzXfFw.hkW7Gyzul2kWf9Z4L8gbII5wpWx9Hvxn80TDMyHZI9HVz0fFqMhO4gGwyiNSybzQJlIUfc3gzUNYrtwc7Mw70;
+        path=/; expires=Tue, 20-May-25 15:55:29 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 942cd8d2bded0bea-AMS
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":"00000","msg":"success","requestTime":1747754729537,"data":{"orderId":"1308743681205645314","clientOid":"1308743681193062403"}}'
+  recorded_at: Tue, 20 May 2025 15:25:28 GMT
+recorded_with: VCR 6.3.1

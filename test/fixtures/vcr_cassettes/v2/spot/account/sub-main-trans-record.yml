@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitget.com/api/v2/spot/account/sub-main-trans-record
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - oZlZ9bC3jxomd5OL/AYsHLgSwK1yzhzynehEIAncxR8=
+      Access-Timestamp:
+      - '1747788415945'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 21 May 2025 00:46:57 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '19'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=Akd.xM_HMg5u5T0tn1aoR8LDSd0V2ztmhZdvnI62NIo-1747788417-1.0.1.1-PFp5sx2e9g4KLz.EX_pH0vYLWYR0v7q_xbaz2sKb7qDYRGhlr.FyzyAbqrJX_3KEG3kOVeMK.SCGPRlwslewbwmB_YjmV3ucvKyavRwLzvY;
+        path=/; expires=Wed, 21-May-25 01:16:57 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 94300f49efde0324-MAD
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":"00000","msg":"success","requestTime":1747788417714,"data":[{"coin":"USDT","status":"Successful","toType":"spot","fromType":"usdt_futures","size":"3000.00000000","ts":"1744674721240","clientOid":"1295825189997600768","transferId":"149096092","fromUserId":"7955878595","toUserId":"7955878595"}]}'
+  recorded_at: Wed, 21 May 2025 00:46:58 GMT
+recorded_with: VCR 6.3.1

@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitget.com/api/v2/spot/market/fills-history?symbol=INVALID
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - ew9SnHWD6sLkz4TlmGPwxgGTQ7jjzR1R1GJATao1w94=
+      Access-Timestamp:
+      - '1747574746008'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 418
+      message: I'm a teapot
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:25:47 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '97'
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '9'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=PMfcZccqthwhEm_5.73w.HdTvKTsj7mYuRLovcKk1Vo-1747574747-1.0.1.1-7YFKY5mCwM_zgDbeda3UXyvQobxPl9iNta6x0AfGnxVAxUcTJLpsWvtdWBam5KBwE4Pe941dSjvc_SXtlJsZucJMepzMm9tORDuxMCWCP3Y;
+        path=/; expires=Sun, 18-May-25 13:55:47 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941baeba4f3cda9e-AMS
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Sun, 18 May 2025 13:25:47 GMT
+recorded_with: VCR 6.3.1

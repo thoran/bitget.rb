@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitget.com/api/v2/spot/account/bills?businessType=deposit&coin=BTC&groupType=transfer
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - pLa00IPpsKwhUyG+JpxdIuugb1y1E+e9nX7P/eLZYyA=
+      Access-Timestamp:
+      - '1747574725659'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 418
+      message: I'm a teapot
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:25:27 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '97'
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '9'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=fFt73P.M8ZmoiEOQJW5_KHp.FHuttgvDdTHHxpZJH9c-1747574727-1.0.1.1-IautPXZLv6pTzywIJQz8nksjTupbTHCoiis_nQzczs9NehXBCYUqzNwOqq8mW15IR_7E5zUeYrmNWIjNZ2UuZJWYX5_7swEPUMgDffl8LTk;
+        path=/; expires=Sun, 18-May-25 13:55:27 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941bae3afd8c5c2c-FRA
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Sun, 18 May 2025 13:25:27 GMT
+recorded_with: VCR 6.3.1

@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitget.com/api/v2/spot/trade/plan-sub-order?orderId=123456
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - u7PV9iKtm4IkeFdvA+z98mF/gSuWT/fK2Sy9JoJwhUI=
+      Access-Timestamp:
+      - '1747574818368'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:26:59 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '95'
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '19'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=hWZuKKN0S20qCJhQvD1b7gfNW_OMMvoK4rGMIgMFINw-1747574819-1.0.1.1-kwPzvLGIIuQt7NIXE3YMQE0yr4LKENbLog6sKcfa_Ba_D.zampc1k4czR_tIJX0U0DC4rSpiZxQqVSCeFPbTTpdKzvNbD.BNf6BE4k7Px7s;
+        path=/; expires=Sun, 18-May-25 13:56:59 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941bb07e89a0e7b1-FRA
+    body:
+      encoding: UTF-8
+      string: '{
+        "code": "00000",
+        "msg": "success",
+        "requestTime": 1710813939206,
+        "data": [
+          {
+            "orderId": "xxxxxxxxxxxxx",
+            "price": "0.4188",
+            "type": "limit",
+            "status": "success"
+          }
+        ]
+      }'
+  recorded_at: Sun, 18 May 2025 13:26:59 GMT
+recorded_with: VCR 6.3.1
