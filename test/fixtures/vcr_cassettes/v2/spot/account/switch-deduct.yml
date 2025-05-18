@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.bitget.com/api/v2/spot/account/switch-deduct
+    body:
+      encoding: UTF-8
+      string: '{"deduct":true,"requestTime":null,"receiveWindow":null}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - dJiIQnnInybYn4d5ENwaUAbGvKy+SouAW8QKc7+ii90=
+      Access-Timestamp:
+      - '1747574792662'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:26:34 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '106'
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '19'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=n50D0OFCh1AikoCyToXdUti3Z5Ul7iznX6v_XCoPBfc-1747574794-1.0.1.1-3MKw25OE8s4YrtcHY75W3xm2YGERD.pbK0urplblEOA8Suu6G_hwJiWVS2RZvfXsmeqH4pRqwT1L3HB0lyOkDNSbECgsc6wyEvFvikOs1wI;
+        path=/; expires=Sun, 18-May-25 13:56:34 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941bafdded2f4d32-FRA
+    body:
+      encoding: UTF-8
+      string: '{"code":"400172","msg":"deduct does not conform to specification","requestTime":1747574794044,"data":null}'
+  recorded_at: Sun, 18 May 2025 13:26:34 GMT
+recorded_with: VCR 6.3.1

@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitget.com/api/v2/spot/market/candles?granularity=1min&symbol=INVALID
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - qOnsypfvDp/YqWvmA8YI5nokU/NBYKw6B52wAEBXKJs=
+      Access-Timestamp:
+      - '1747574735049'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 418
+      message: I'm a teapot
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:25:36 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '97'
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '19'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=g86DXxelSji0BnmnAaXzp51kZSoaAdj0QZ.zx_g90Aw-1747574736-1.0.1.1-6nS7EEfUjDKMhJ1Ny69ufn9tUa.9gwX.nvdqaNNrjfUAGqR1lbDHLNLEOH6zaiawGiIp3zn6O9NS8qtm0JbjrY9xyKAWizBmHQX1K91rSbc;
+        path=/; expires=Sun, 18-May-25 13:55:36 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941bae75a94bdc76-FRA
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Sun, 18 May 2025 13:25:36 GMT
+recorded_with: VCR 6.3.1

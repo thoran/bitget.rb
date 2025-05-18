@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitget.com/api/v2/spot/market/vip-fee-rate
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - "+XB8PrEi1YgS+lNoMDdAECWoye60FGsEf/C2DU+sTtM="
+      Access-Timestamp:
+      - '1747574831182'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 418
+      message: I'm a teapot
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:27:12 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Mbx-Used-Remain-Limit:
+      - '9'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=PfrzLhimXbW3gcEznOh14GF5yemQT3do9KDJXc9Q8H8-1747574832-1.0.1.1-4xeK3ZwifKPGSZKo_7W0P9YNAXmG4wjr40fPzNsvqLkVX9_e2xN6avYxPJNVHkel2J3de7ylmcOCc5vhzTF5K.Vy39TYEp0M0U.husALMWU;
+        path=/; expires=Sun, 18-May-25 13:57:12 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941bb0ceaf5f8ec5-FRA
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+  recorded_at: Sun, 18 May 2025 13:27:12 GMT
+recorded_with: VCR 6.3.1

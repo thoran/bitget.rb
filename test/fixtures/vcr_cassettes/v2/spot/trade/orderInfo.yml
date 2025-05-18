@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitget.com/api/v2/spot/trade/order-info?orderId=123456&symbol=BTCUSDT
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - Y7wyI8TpNNR8O/f0yfRvc0O7gYC7rCyEoARwbra4RJU=
+      Access-Timestamp:
+      - '1747574783074'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:26:24 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=toHt8eq55evq4e6xWcc5Jj2GF4c6V3ON21pvMXdx9g4-1747574784-1.0.1.1-fMMtGw7uvJGCEClLlQac3GjZ2an_C1J7K1x.bC4ZqUH9Fyp9nDYtLf_vI3w5fNNy9QPVXO7960eftObyGbt1EboZBwFIK4sMnA.7Hc0i3yk;
+        path=/; expires=Sun, 18-May-25 13:56:24 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941bafa1ebd618c7-FRA
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":"40404","msg":"Request URL NOT FOUND","requestTime":1747574784475,"data":null}'
+  recorded_at: Sun, 18 May 2025 13:26:24 GMT
+recorded_with: VCR 6.3.1

@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.bitget.com/api/v2/spot/trade/cancel-symbol-order
+    body:
+      encoding: UTF-8
+      string: '{"symbol":"BTCUSDT","requestTime":null,"receiveWindow":null}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - 1WqWtSW8cN8fP3crT4FVYmbxaI53Bb2boUhUCDZxPcA=
+      Access-Timestamp:
+      - '1747574761941'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:26:03 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '19'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=4OypW9vGjhM5oi7Ucb70UtHqLoQUWOqRK2mBa_TGZN4-1747574763-1.0.1.1-870fI4q8wrOsKZpUubDd1dkgPrwpgZ_sooI_Cq1ktLmLwWLZ_8JBcxHoab6QKNZCbj5jv0Nwxr7XmsCkk6RaV6re716MqIzcaJ0_.V6wi0U;
+        path=/; expires=Sun, 18-May-25 13:56:03 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941baf1dcf89d294-FRA
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":"00000","msg":"success","requestTime":1747574763291,"data":{"symbol":"BTCUSDT"}}'
+  recorded_at: Sun, 18 May 2025 13:26:03 GMT
+recorded_with: VCR 6.3.1

@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.bitget.com/api/v2/spot/wallet/withdrawal
+    body:
+      encoding: UTF-8
+      string: '{"coin":"USDT","chain":"TRC20","address":"0x1234567890abcdef","amount":"100","tag":null,"remark":null,"requestTime":null,"receiveWindow":null}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - eNkZ9Wa3HdDNFHMbsGdncj4vK5HXJWfuryLaXtYG2FA=
+      Access-Timestamp:
+      - '1747574853540'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:27:35 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '119'
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '0'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=_nGzACrHjluZ82iBl_44BzEZBuvJbkKjy1HgAicdrws-1747574855-1.0.1.1-lCt4equyHm9DcFb_VT.o9mha5MpllwAGL__b5iwJe0pKPo9R0aLrjB4mRqUqmWVo6MZ3ZoX_A_8EdFKIhfSDSkThUNDay48iAKaOCmPCp4s;
+        path=/; expires=Sun, 18-May-25 13:57:35 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941bb15a69afdcb1-FRA
+    body:
+      encoding: UTF-8
+      string: '{"code":"40014","msg":"Incorrect permissions, need withdraw write permissions","requestTime":1747574854912,"data":null}'
+  recorded_at: Sun, 18 May 2025 13:27:35 GMT
+recorded_with: VCR 6.3.1

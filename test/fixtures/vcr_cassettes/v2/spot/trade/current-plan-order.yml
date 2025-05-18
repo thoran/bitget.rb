@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitget.com/api/v2/spot/trade/current-plan-order?symbol=BTCUSDT
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - m1XvvO+WnaJXa5vKpZ4Re8mw0Kx4Grtdv+wXxrnDXoQ=
+      Access-Timestamp:
+      - '1747574738172'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:25:39 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '19'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=dTF6FqUrcoJBsaoBpMyvn5KofkNRS3B.GsmdYfRpr7M-1747574739-1.0.1.1-LeMFMV7oSWxM7G8tYjoj9SIWS9Iw5aN3v7zm9x6m4umd8wyu.XSxsWucr.qnJx43oKrJsYCJm_bF0r6cYbjwCpMBnAAn.h5e7.PZeo0nkQQ;
+        path=/; expires=Sun, 18-May-25 13:55:39 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941bae8949ded5a5-AMS
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":"00000","msg":"success","requestTime":1747574739537,"data":{"nextFlag":false,"idLessThan":"","orderList":[]}}'
+  recorded_at: Sun, 18 May 2025 13:25:39 GMT
+recorded_with: VCR 6.3.1

@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.bitget.com/api/v2/spot/trade/cancel-plan-order
+    body:
+      encoding: UTF-8
+      string: '{"orderId":"123456"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - b+pYvuKn4i99kj2xlnnaEQ3i3CfqUagwpI8bNDHHS5A=
+      Access-Timestamp:
+      - '1747574824724'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:27:06 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '90'
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '9'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=Fc93vQc4EvQ2SOIC4Ay7llkUJSaPzr4q_wSKQzvA0Ag-1747574826-1.0.1.1-8kgKLhvBZVXu7r_0Ia3qj9v8cSy8szfHDsMhztVb9QZm.Tz6MM_UXrAU1IyWyxKozb6MFZeV2dgGEuWMwScdRIL7tSrIyM9BNRhzr6weoIw;
+        path=/; expires=Sun, 18-May-25 13:57:06 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941bb0a659e25ec9-AMS
+    body:
+      encoding: UTF-8
+      string: '{"code":"43025","msg":"Plan order does not exist","requestTime":1747574826139,"data":null}'
+  recorded_at: Sun, 18 May 2025 13:27:06 GMT
+recorded_with: VCR 6.3.1

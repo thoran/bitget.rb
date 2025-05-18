@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.bitget.com/api/v2/spot/trade/batch-cancel-plan-order
+    body:
+      encoding: UTF-8
+      string: '{"symbol":"BTCUSDT","orderIds":["123456","123457"]}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - NHV7H43GQXFAKa3BGSpJB41Uvmwfyezv5lp/YUkqyrk=
+      Access-Timestamp:
+      - '1747575709474'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:41:51 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '19'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=GsQVT2fhl.VPpc3hPraYfLuwNGd1ybjl4vNzOzmi8TY-1747575711-1.0.1.1-y.gXtczcU7qTUP6x9LEhOqKIwpkujn_hfyRIciBn4YVefaz8zpRaSfK_6.IcfGE2jwqJoFikdXSXHOiF_hlUn6cZh1QWUY3zuY1rwLltzjU;
+        path=/; expires=Sun, 18-May-25 14:11:51 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941bc642acc79ffa-AMS
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":"00000","msg":"success","requestTime":1747575711282,"data":{"successList":null,"failureList":null}}'
+  recorded_at: Sun, 18 May 2025 13:41:51 GMT
+recorded_with: VCR 6.3.1

@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bitget.com/api/v2/spot/market/tickers?symbol=BTCUSDT
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Access-Key:
+      - "<API_KEY>"
+      Access-Sign:
+      - B6YE9SACqxmRKpRPMJ7/Sn7e67g654Ltd0FA5ek1YGs=
+      Access-Timestamp:
+      - '1747574765062'
+      Access-Passphrase:
+      - "<API_PASSPHRASE>"
+      Content-Type:
+      - application/json
+      X-Channel-Api-Code:
+      - spot
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 18 May 2025 13:26:06 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Mbx-Used-Remain-Limit:
+      - '19'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=JPQ5jyls.mxxcyCZU1UbsoeMCvD5OO6ub1Rdk0fpQxo-1747574766-1.0.1.1-.eZvlUz8gQLp1hMYaJiEcPQwpDqXW8YEimgzy.Sc3U4bNJR9Xm5Ov82Y7v_8XWl5N7cf_vD33dzgwOYumfw5EL0rpVQpKcOwsRIPoptl9uI;
+        path=/; expires=Sun, 18-May-25 13:56:06 GMT; domain=.api.bitget.com; HttpOnly;
+        Secure; SameSite=None
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 941baf314a4bfc96-AMS
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":"00000","msg":"success","requestTime":1747574766426,"data":[{"open":"102889.99","symbol":"BTCUSDT","high24h":"104071.43","low24h":"102665","lastPr":"103884.3","quoteVolume":"335315496.518512","baseVolume":"3244.866356","usdtVolume":"335315496.51851119","ts":"1747574765361","bidPr":"103884.29","askPr":"103884.3","bidSz":"0.304315","askSz":"1.15968","openUtc":"103117.92","changeUtc24h":"0.00743","change24h":"0.00966"}]}'
+  recorded_at: Sun, 18 May 2025 13:26:06 GMT
+recorded_with: VCR 6.3.1
