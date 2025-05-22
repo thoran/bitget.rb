@@ -27,8 +27,8 @@ http_interactions:
       - spot
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
       Date:
       - Sun, 18 May 2025 13:25:28 GMT
@@ -58,6 +58,6 @@ http_interactions:
       - 941bae44a91165c5-FRA
     body:
       encoding: UTF-8
-      string: '{"code":"40054","msg":"The data fetched by 123456 is empty","requestTime":1747574728576,"data":null}'
+      string: '{"code": "00000","msg": "success","requestTime": 1668134576535,"data": {"orderId": "121211212122","clientOid": "121211212122"}}'
   recorded_at: Sun, 18 May 2025 13:25:28 GMT
 recorded_with: VCR 6.3.1

@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.bitget.com/api/v2/spot/trade/batch-orders
     body:
       encoding: UTF-8
-      string: '{"orders":[{"symbol":"BTCUSDT","side":"buy","orderType":"limit","force":"normal","price":"30000","size":"0.001"},{"symbol":"ETHUSDT","side":"buy","orderType":"limit","force":"normal","price":"2000","size":"0.01"}],"requestTime":null,"receiveWindow":null}'
+      string: '{"batchMode":"multiple","orderList":[{"symbol":"BTCUSDT","side":"buy","orderType":"limit","force":"gtc","price":"30000","size":"0.001"},{"symbol":"ETHUSDT","side":"buy","orderType":"limit","force":"gtc","price":"2000","size":"0.01"}]}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -16,9 +16,9 @@ http_interactions:
       Access-Key:
       - "<API_KEY>"
       Access-Sign:
-      - ZUQ8YZvJ4qj5GcJhuJlUGnvP25eYcJ0PWaDHjehKPI0=
+      - 7tm7N0xkVFFWwnYaTro/SZ5XDf/5KmK70WL9uL+bPyU=
       Access-Timestamp:
-      - '1747574834359'
+      - '1747753723776'
       Access-Passphrase:
       - "<API_PASSPHRASE>"
       Content-Type:
@@ -27,19 +27,23 @@ http_interactions:
       - spot
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
       Date:
-      - Sun, 18 May 2025 13:27:15 GMT
+      - Tue, 20 May 2025 15:08:46 GMT
       Content-Type:
       - application/json
-      Content-Length:
-      - '97'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
       X-Mbx-Used-Remain-Limit:
       - '19'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -47,17 +51,17 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=kdWHq.7fT0PiY_WTqMBbmmDecJ_ez9FAT3N_LgSXkyQ-1747574835-1.0.1.1-w0nNI4fcnQsBvu7XH6ux_t0GPkXIpQ._gzrBXiSCl4v0kjpnGgvrWsL8W6d3771qWl4YZT85QS.xRZCdBytApoAnZpa646TH1msVf6Q9pBs;
-        path=/; expires=Sun, 18-May-25 13:57:15 GMT; domain=.api.bitget.com; HttpOnly;
+      - __cf_bm=SsG3VttANXXXHsoUFNEYLiI5FEsU8FLkHEJg4ym0q80-1747753726-1.0.1.1-TXXAUyyPGWtWiaC4d0Urh9AzaPUkGs_FZvWCnZXW2Qib8AfXPUjjOgNomJupHxNK.aqEp7TeANrPRP1G8lxV3Gat7u1PaDUQDvUhbaxroBc;
+        path=/; expires=Tue, 20-May-25 15:38:46 GMT; domain=.api.bitget.com; HttpOnly;
         Secure; SameSite=None
       X-Frame-Options:
       - SAMEORIGIN
       Server:
       - cloudflare
       Cf-Ray:
-      - 941bb0e29a498869-AMS
+      - 942cc055d860b902-AMS
     body:
-      encoding: UTF-8
-      string: '{"code":"40019","msg":"Parameter symbol cannot be empty","requestTime":1747574835748,"data":null}'
-  recorded_at: Sun, 18 May 2025 13:27:15 GMT
+      encoding: ASCII-8BIT
+      string: '{"code":"00000","msg":"success","requestTime":1747753726516,"data":{"successList":[{"orderId":"1308739474185175042","clientOid":"0f1c92ec-fd9a-4970-a64d-000d7e96f6a8"},{"orderId":"1308739474189369350","clientOid":"39601186-02f2-4a33-aa90-5da1b6259127"}],"failureList":[]}}'
+  recorded_at: Tue, 20 May 2025 15:08:45 GMT
 recorded_with: VCR 6.3.1

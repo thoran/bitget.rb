@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.bitget.com/api/v2/spot/wallet/transfer-coin-info?fromAccount=INVALID&toAccount=INVALID
+    uri: https://api.bitget.com/api/v2/spot/wallet/transfer-coin-info?fromType=INVALID&toType=INVALID
     body:
       encoding: US-ASCII
       string: ''

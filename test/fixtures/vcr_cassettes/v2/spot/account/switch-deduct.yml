@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.bitget.com/api/v2/spot/account/switch-deduct
     body:
       encoding: UTF-8
-      string: '{"deduct":true,"requestTime":null,"receiveWindow":null}'
+      string: '{"deduct":"on"}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -16,9 +16,9 @@ http_interactions:
       Access-Key:
       - "<API_KEY>"
       Access-Sign:
-      - dJiIQnnInybYn4d5ENwaUAbGvKy+SouAW8QKc7+ii90=
+      - 4MxednaSZHKYEKYa5iFdDN4WM2dfFrwwr30UgsSvTHg=
       Access-Timestamp:
-      - '1747574792662'
+      - '1747753963945'
       Access-Passphrase:
       - "<API_PASSPHRASE>"
       Content-Type:
@@ -27,11 +27,11 @@ http_interactions:
       - spot
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
       Date:
-      - Sun, 18 May 2025 13:26:34 GMT
+      - Tue, 20 May 2025 15:12:47 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -47,17 +47,23 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=n50D0OFCh1AikoCyToXdUti3Z5Ul7iznX6v_XCoPBfc-1747574794-1.0.1.1-3MKw25OE8s4YrtcHY75W3xm2YGERD.pbK0urplblEOA8Suu6G_hwJiWVS2RZvfXsmeqH4pRqwT1L3HB0lyOkDNSbECgsc6wyEvFvikOs1wI;
-        path=/; expires=Sun, 18-May-25 13:56:34 GMT; domain=.api.bitget.com; HttpOnly;
+      - __cf_bm=9HBBQhwsmdARZ8rzKNoRqWqfllM156JBogZMHDMDpqQ-1747753967-1.0.1.1-ysX_5gUgkbakyHyb4U7by8G3MOwsgSpAwRrVMjF3wBs32lz8u8VUjZIg2rb_8q5DDcwG_xG8EWUchr_BLSHE8TbUi.iEj9whQcL2c4JqNeQ;
+        path=/; expires=Tue, 20-May-25 15:42:47 GMT; domain=.api.bitget.com; HttpOnly;
         Secure; SameSite=None
       X-Frame-Options:
       - SAMEORIGIN
       Server:
       - cloudflare
       Cf-Ray:
-      - 941bafdded2f4d32-FRA
+      - 942cc634dd083ed0-AMS
     body:
       encoding: UTF-8
-      string: '{"code":"400172","msg":"deduct does not conform to specification","requestTime":1747574794044,"data":null}'
-  recorded_at: Sun, 18 May 2025 13:26:34 GMT
+      string: '
+{
+    "code": "00000",
+    "msg": "success",
+    "requestTime": 1683875302853,
+    "data": true
+}'
+  recorded_at: Tue, 20 May 2025 15:12:45 GMT
 recorded_with: VCR 6.3.1

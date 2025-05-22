@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.bitget.com/api/v2/spot/wallet/subaccount-deposit-address?chain=TRC20&coin=USDT&subaccountId=123456
+    uri: https://api.bitget.com/api/v2/spot/wallet/subaccount-deposit-address?chain=TRC20&coin=USDT&subUid=123456
     body:
       encoding: US-ASCII
       string: ''
@@ -16,9 +16,9 @@ http_interactions:
       Access-Key:
       - "<API_KEY>"
       Access-Sign:
-      - PKHyD0LXBJBHnKo/1JEKA06GnyTjxwGQ/Jvzuj+m+z0=
+      - q74iTZEmjB/9qTYVbBa3HmI65b8ui2NvlZcV6jZg/Ls=
       Access-Timestamp:
-      - '1747574724100'
+      - '1747823054678'
       Access-Passphrase:
       - "<API_PASSPHRASE>"
       Content-Type:
@@ -27,15 +27,15 @@ http_interactions:
       - spot
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
       Date:
-      - Sun, 18 May 2025 13:25:25 GMT
+      - Wed, 21 May 2025 10:24:17 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '95'
+      - '108'
       Connection:
       - keep-alive
       X-Mbx-Used-Remain-Limit:
@@ -47,17 +47,17 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=gpuSYykUITDUAULvTzWKDRwGqEZT7t_TELL0Fwh56NM-1747574725-1.0.1.1-pLivlm1EVho_dPwcmJ755XU_sqLgP5s25xA.GA_YKgQWGRWSsiEc6qfuV6RtHUFsMb69WYQsuXFmU158L9950uoKv03iVNMNobt_dE1HLg8;
-        path=/; expires=Sun, 18-May-25 13:55:25 GMT; domain=.api.bitget.com; HttpOnly;
+      - __cf_bm=IvVoSG6Zci92aE9NCbM1ig0DMSZiBN1R1cqI3gSqW4E-1747823057-1.0.1.1-L5ttMlcYExoD9Kh3OpE29kPMKtkBUGkb9Vb6ZRmHYNtfEwGBzAWHNioF51VPJwmTGvZy_WRCJQi46chZ_LIaMtQygc8UcYhUYYUdlVdJ7I8;
+        path=/; expires=Wed, 21-May-25 10:54:17 GMT; domain=.api.bitget.com; HttpOnly;
         Secure; SameSite=None
       X-Frame-Options:
       - SAMEORIGIN
       Server:
       - cloudflare
       Cf-Ray:
-      - 941bae3139d7d388-FRA
+      - 94335cfacd3dcfe7-MAD
     body:
       encoding: UTF-8
-      string: '{"code":"400172","msg":"Parameter verification failed","requestTime":1747574725459,"data":null}'
-  recorded_at: Sun, 18 May 2025 13:25:25 GMT
+      string: '{"code":"00000","msg":"success","requestTime":1747823057238,"data":{"coin":"USDT","address":"TFs7vLUp6Y3SfAa39vdi4XrZeTJohMHzz9","chain":"TRC20","tag":null,"url":"https://tronscan.org/#/transaction/"}}'
+  recorded_at: Wed, 21 May 2025 10:24:16 GMT
 recorded_with: VCR 6.3.1

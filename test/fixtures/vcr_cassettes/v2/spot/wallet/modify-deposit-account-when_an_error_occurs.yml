@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.bitget.com/api/v2/spot/wallet/modify-deposit-account
     body:
       encoding: UTF-8
-      string: '{"coin":"INVALID","chain":"INVALID","address":"0x1234567890abcdef","tag":null,"requestTime":null,"receiveWindow":null}'
+      string: '{"accountType":"INVALID","coin":"INVALID"}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3

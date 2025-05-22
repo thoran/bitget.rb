@@ -27,8 +27,8 @@ http_interactions:
       - spot
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
       Date:
       - Sun, 18 May 2025 13:26:00 GMT
@@ -58,6 +58,6 @@ http_interactions:
       - 941baf09ada8dba7-FRA
     body:
       encoding: UTF-8
-      string: '{"code":"40009","msg":"sign signature error","requestTime":1747574760086,"data":null}'
+      string: '{"code": "00000","data": [{"coin": "btc","status": "Successful","toType": "usdt_futures","toSymbol": "","fromType": "spot","fromSymbol": "BTC/USD","size": "1000.00000000","ts": "1631070374488","clientOid": "1","transferId": "1"}],"msg": "success","requestTime": 1631608142260}'
   recorded_at: Sun, 18 May 2025 13:26:00 GMT
 recorded_with: VCR 6.3.1

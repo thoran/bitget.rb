@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.bitget.com/api/v2/spot/wallet/modify-deposit-account
     body:
       encoding: UTF-8
-      string: '{"coin":"USDT","chain":"TRC20","address":"0x1234567890abcdef","tag":null,"requestTime":null,"receiveWindow":null}'
+      string: '{"accountType":"spot","coin":"TRX"}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -27,8 +27,8 @@ http_interactions:
       - spot
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
       Date:
       - Sun, 18 May 2025 13:26:37 GMT
@@ -58,6 +58,6 @@ http_interactions:
       - 941baff21b6265c1-FRA
     body:
       encoding: UTF-8
-      string: '{"code":"400172","msg":"accountType not empty","requestTime":1747574797270,"data":null}'
+      string: '{"code": "00000","msg": "success","requestTime": 1683875302853,"data": "success"}'
   recorded_at: Sun, 18 May 2025 13:26:37 GMT
 recorded_with: VCR 6.3.1

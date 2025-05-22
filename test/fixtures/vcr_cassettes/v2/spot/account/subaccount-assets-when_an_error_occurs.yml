@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.bitget.com/api/v2/spot/account/subaccount-assets?subaccountId=INVALID
+    uri: https://api.bitget.com/api/v2/spot/account/subaccount-assets
     body:
       encoding: US-ASCII
       string: ''

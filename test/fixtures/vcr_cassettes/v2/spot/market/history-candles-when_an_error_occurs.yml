@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.bitget.com/api/v2/spot/market/history-candles?granularity=1min&symbol=INVALID
+    uri: https://api.bitget.com/api/v2/spot/market/history-candles?endTime=1690196141868&granularity=1min&symbol=INVALID
     body:
       encoding: US-ASCII
       string: ''

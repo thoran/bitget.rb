@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.bitget.com/api/v2/spot/trade/cancel-replace-order
     body:
       encoding: UTF-8
-      string: '{"symbol":"INVALID","price":"31000","size":"0.001","clientOid":null,"orderId":"123456","newClientOid":null,"presetTakeProfitPrice":null,"executeTakeProfitPrice":null,"presetStopLossPrice":null,"executeStopLossPrice":null,"requestTime":null,"receiveWindow":null}'
+      string: '{orderList:[{"symbol":"INVALID"}]}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3

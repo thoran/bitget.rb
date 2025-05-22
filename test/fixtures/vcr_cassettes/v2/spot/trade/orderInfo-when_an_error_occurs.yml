@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.bitget.com/api/v2/spot/trade/order-info?orderId=123456&symbol=INVALID
+    uri: https://api.bitget.com/api/v2/spot/trade/orderInfo?orderId=INVALID
     body:
       encoding: US-ASCII
       string: ''

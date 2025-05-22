@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.bitget.com/api/v2/spot/wallet/subaccount-deposit-records?coin=BTC&status=success&subaccountId=INVALID
+    uri: https://api.bitget.com/api/v2/spot/wallet/subaccount-deposit-records?subUid=INVALID
     body:
       encoding: US-ASCII
       string: ''

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.bitget.com/api/v2/spot/trade/history-plan-order?symbol=INVALID
+    uri: https://api.bitget.com/api/v2/spot/trade/history-plan-order?endTime=1747755739537&startTime=1747754739537&symbol=INVALID
     body:
       encoding: US-ASCII
       string: ''

@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.bitget.com/api/v2/spot/trade/place-order
     body:
       encoding: UTF-8
-      string: '{"symbol":"BTCUSDT","side":"buy","orderType":"limit","force":"normal","price":"30000","size":"0.001","clientOid":null,"triggerPrice":null,"tpslType":null,"requestTime":null,"receiveWindow":null,"stpMode":null,"presetTakeProfitPrice":null,"executeTakeProfitPrice":null,"presetStopLossPrice":null,"executeStopLossPrice":null}'
+      string: '{"force":"gtc","orderType":"limit","price":"30000","side":"buy","size":"0.001","symbol":"BTCUSDT"}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -16,9 +16,9 @@ http_interactions:
       Access-Key:
       - "<API_KEY>"
       Access-Sign:
-      - 1o+xaWtI0kaWzGf5TdmMkfsA8XWj6rAM5T96eR+olSE=
+      - Qh6Tmo58NM4j+fomHMgnebWNy84vBS2CEqPN87ru4uw=
       Access-Timestamp:
-      - '1747574733469'
+      - '1747754540058'
       Access-Passphrase:
       - "<API_PASSPHRASE>"
       Content-Type:
@@ -27,19 +27,23 @@ http_interactions:
       - spot
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
       Date:
-      - Sun, 18 May 2025 13:25:34 GMT
+      - Tue, 20 May 2025 15:22:22 GMT
       Content-Type:
       - application/json
-      Content-Length:
-      - '86'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
       X-Mbx-Used-Remain-Limit:
       - '19'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -47,17 +51,17 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=WSsHB.nvYz3HRYMKflMHwuI.eZJhZjkOOBe_sl5RLYE-1747574734-1.0.1.1-TyXpV4j615MfKXoTgUNrr_7uEjeoPYHI5DCGzX0WIWBBFvr8gOVKw7pnJQwUIf02wsbhQckK7zArP100tukrvVysjy2Ji31V9CrXMDCTPf8;
-        path=/; expires=Sun, 18-May-25 13:55:34 GMT; domain=.api.bitget.com; HttpOnly;
+      - __cf_bm=yKHMvWvGPs0.uReBjTi1SoqdCFPpn02ZF4WGgQBxH5E-1747754542-1.0.1.1-8gzIJop_vcZyNb6ccCR.pd1B1L17i2oLxJMrUZp8lPSGLEjwZ1UICQcLlhBLM1S87O4voiGbIpbZy8uAmzyIBg46UZaliSNSebMTfDeb1do;
+        path=/; expires=Tue, 20-May-25 15:52:22 GMT; domain=.api.bitget.com; HttpOnly;
         Secure; SameSite=None
       X-Frame-Options:
       - SAMEORIGIN
       Server:
       - cloudflare
       Cf-Ray:
-      - 941bae6be92e6724-AMS
+      - 942cd4433e3da6e5-AMS
     body:
-      encoding: UTF-8
-      string: '{"code":"40020","msg":"Parameter force error","requestTime":1747574734847,"data":null}'
-  recorded_at: Sun, 18 May 2025 13:25:35 GMT
+      encoding: ASCII-8BIT
+      string: '{"code":"00000","msg":"success","requestTime":1747754542738,"data":{"orderId":"1308742897634820105","clientOid":"5fec19b7-1f3a-4b4a-ab47-013724c9e7dc"}}'
+  recorded_at: Tue, 20 May 2025 15:22:21 GMT
 recorded_with: VCR 6.3.1

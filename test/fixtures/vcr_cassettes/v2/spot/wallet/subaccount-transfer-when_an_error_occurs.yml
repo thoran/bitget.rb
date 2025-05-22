@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.bitget.com/api/v2/spot/wallet/subaccount-transfer
     body:
       encoding: UTF-8
-      string: '{"subaccountId":"INVALID","coin":"INVALID","amount":"100","direction":"INVALID","requestTime":null,"receiveWindow":null}'
+      string: '{"fromType":"INVALID","toType":"INVALID",coin":"INVALID","amount":"100"}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3

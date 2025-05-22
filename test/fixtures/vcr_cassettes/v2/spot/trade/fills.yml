@@ -62,6 +62,34 @@ http_interactions:
       - 941bb11519e7b90c-AMS
     body:
       encoding: ASCII-8BIT
-      string: '{"code":"00000","msg":"success","requestTime":1747574843830,"data":[]}'
+      string: '
+        {
+          "code": "00000",
+          "msg": "success",
+          "requestTime": 1695865274510,
+          "data": [
+            {
+              "userId": "**********",
+              "symbol": "BTCUSDT",
+              "orderId": "12345678910",
+              "tradeId": "12345678910",
+              "orderType": "market",
+              "side": "buy",
+              "priceAvg": "13000",
+              "size": "0.0007",
+              "amount": "9.1",
+              "feeDetail": {
+                "deduction": "no",
+                "feeCoin": "BTC",
+                "totalDeductionFee": "",
+                "totalFee": "-0.0000007"
+              },
+              "tradeScope": "taker",
+              "cTime": "1695865232579",
+              "uTime": "1695865233027"
+            }
+          ]
+        }
+      '
   recorded_at: Sun, 18 May 2025 13:27:24 GMT
 recorded_with: VCR 6.3.1

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.bitget.com/api/v2/spot/account/subaccount-assets?subaccountId=123456
+    uri: https://api.bitget.com/api/v2/spot/account/subaccount-assets
     body:
       encoding: US-ASCII
       string: ''
@@ -62,6 +62,41 @@ http_interactions:
       - 941baf13caec5d67-FRA
     body:
       encoding: ASCII-8BIT
-      string: '{"code":"00000","msg":"success","requestTime":1747574761719,"data":[]}'
+      string: '
+{
+  "code": "00000",
+  "message": "success",
+  "requestTime": 1695808949356,
+  "data": [
+    {
+      "id": 1111,
+      "userId": 1234567890,
+      "assetsList": [
+        {
+          "coin": "BTC",
+          "available": "1.1",
+          "limitAvailable": "12.1",
+          "frozen": "0",
+          "locked": "1.1",
+          "uTime": "1337654897651"
+        }
+      ]
+    },
+    {
+      "id": 2222,
+      "userId": 1234567890,
+      "assetsList": [
+        {
+          "coin": "ETH",
+          "available": "12.1",
+          "limitAvailable": "12.1",
+          "frozen": "0",
+          "locked": "1.1",
+          "uTime": "1337654897651"
+        }
+      ]
+    }
+  ]
+}'
   recorded_at: Sun, 18 May 2025 13:26:01 GMT
 recorded_with: VCR 6.3.1

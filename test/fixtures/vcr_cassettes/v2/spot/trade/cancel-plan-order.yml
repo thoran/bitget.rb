@@ -16,9 +16,9 @@ http_interactions:
       Access-Key:
       - "<API_KEY>"
       Access-Sign:
-      - b+pYvuKn4i99kj2xlnnaEQ3i3CfqUagwpI8bNDHHS5A=
+      - "+axe7cGNXbteAs6K52icezZxtxI9kMZB3aY4Z91wHdY="
       Access-Timestamp:
-      - '1747574824724'
+      - '1747754397422'
       Access-Passphrase:
       - "<API_PASSPHRASE>"
       Content-Type:
@@ -27,11 +27,11 @@ http_interactions:
       - spot
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
       Date:
-      - Sun, 18 May 2025 13:27:06 GMT
+      - Tue, 20 May 2025 15:20:00 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -47,17 +47,26 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=Fc93vQc4EvQ2SOIC4Ay7llkUJSaPzr4q_wSKQzvA0Ag-1747574826-1.0.1.1-8kgKLhvBZVXu7r_0Ia3qj9v8cSy8szfHDsMhztVb9QZm.Tz6MM_UXrAU1IyWyxKozb6MFZeV2dgGEuWMwScdRIL7tSrIyM9BNRhzr6weoIw;
-        path=/; expires=Sun, 18-May-25 13:57:06 GMT; domain=.api.bitget.com; HttpOnly;
+      - __cf_bm=NOsTuzMihdexKsyesfAcCw8rs712q1EYKs.tNbK7fJc-1747754400-1.0.1.1-H7CxgiVSzSFnIr3oznwa8XRJk7zO1a16J8GRJh398lZRJwIclyUCJ9Tix9BZrmXU0B6cCJsdKa70CfnIsKyh3ztloMuixNIFI4FJRKKw3yA;
+        path=/; expires=Tue, 20-May-25 15:50:00 GMT; domain=.api.bitget.com; HttpOnly;
         Secure; SameSite=None
       X-Frame-Options:
       - SAMEORIGIN
       Server:
       - cloudflare
       Cf-Ray:
-      - 941bb0a659e25ec9-AMS
+      - 942cd0cb0d64668d-AMS
     body:
       encoding: UTF-8
-      string: '{"code":"43025","msg":"Plan order does not exist","requestTime":1747574826139,"data":null}'
-  recorded_at: Sun, 18 May 2025 13:27:06 GMT
+      string: '
+        {
+            "code": "00000",
+            "msg": "success",
+            "requestTime": 1668134497496,
+            "data": {
+                "result":"success"
+            }
+        }
+      '
+  recorded_at: Tue, 20 May 2025 15:19:59 GMT
 recorded_with: VCR 6.3.1

@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.bitget.com/api/v2/spot/trade/place-plan-order
     body:
       encoding: UTF-8
-      string: '{"symbol":"BTCUSDT","side":"buy","orderType":"limit","size":"0.001","triggerPrice":"30000","executePrice":"30000","triggerType":null,"timeInForce":null,"clientOrderId":null}'
+      string: '{"executePrice":"30000","orderType":"limit","side":"buy","size":"0.001","symbol":"BTCUSDT","triggerPrice":"30000","triggerType":"mark_price"}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -16,9 +16,9 @@ http_interactions:
       Access-Key:
       - "<API_KEY>"
       Access-Sign:
-      - OR5560efiT/iHTn94iVcWqL/8c+2TKvnR20Q0kj0bT4=
+      - c+IWW0SjZh0ssk0KCdQKWRvrwtGZvpndXw8FtI18FKA=
       Access-Timestamp:
-      - '1747574803916'
+      - '1747754726548'
       Access-Passphrase:
       - "<API_PASSPHRASE>"
       Content-Type:
@@ -27,19 +27,23 @@ http_interactions:
       - spot
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
       Date:
-      - Sun, 18 May 2025 13:26:45 GMT
+      - Tue, 20 May 2025 15:25:29 GMT
       Content-Type:
       - application/json
-      Content-Length:
-      - '98'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
       X-Mbx-Used-Remain-Limit:
       - '9'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -47,17 +51,17 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=xX6yFK0bhMcfA4_JqR.sI5jG72Vw3a6mMdtOafBP.Ig-1747574805-1.0.1.1-nAef1oDUweYDqxRpU9Y41xOwPT3QvIl5v4lGTe5hU_zYBCCuEYUkG8hF.D4QE.SZ1sjaxQph3ve6SwbaiSJRrdt.zwOCxR38vMi_3KcXWXo;
-        path=/; expires=Sun, 18-May-25 13:56:45 GMT; domain=.api.bitget.com; HttpOnly;
+      - __cf_bm=QvsBwTcrpXPBbDnPZAMvhfYviKZ2zBLvKc8ML4Czly8-1747754729-1.0.1.1-QULWhmlCeCvXcgxdzXfFw.hkW7Gyzul2kWf9Z4L8gbII5wpWx9Hvxn80TDMyHZI9HVz0fFqMhO4gGwyiNSybzQJlIUfc3gzUNYrtwc7Mw70;
+        path=/; expires=Tue, 20-May-25 15:55:29 GMT; domain=.api.bitget.com; HttpOnly;
         Secure; SameSite=None
       X-Frame-Options:
       - SAMEORIGIN
       Server:
       - cloudflare
       Cf-Ray:
-      - 941bb0244ff56648-AMS
+      - 942cd8d2bded0bea-AMS
     body:
-      encoding: UTF-8
-      string: '{"code":"400172","msg":"The trigger type cannot be empty","requestTime":1747574805308,"data":null}'
-  recorded_at: Sun, 18 May 2025 13:26:45 GMT
+      encoding: ASCII-8BIT
+      string: '{"code":"00000","msg":"success","requestTime":1747754729537,"data":{"orderId":"1308743681205645314","clientOid":"1308743681193062403"}}'
+  recorded_at: Tue, 20 May 2025 15:25:28 GMT
 recorded_with: VCR 6.3.1

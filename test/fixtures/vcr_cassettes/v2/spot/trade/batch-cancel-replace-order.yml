@@ -27,8 +27,8 @@ http_interactions:
       - spot
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
       Date:
       - Sun, 18 May 2025 13:26:43 GMT
@@ -58,6 +58,6 @@ http_interactions:
       - 941bb01a6a493441-AMS
     body:
       encoding: UTF-8
-      string: '{"code":"400172","msg":"orderListspot.order.orderDataList.empty","requestTime":1747574803715,"data":null}'
+      string: '{"code": "00000","msg": "success","requestTime": 1725341809524,"data": [{"orderId": "xxxxxxxxxxxxxxxxxxxxxx","clientOid": null,"success": "failure","msg": "xxxxxx"}]}'
   recorded_at: Sun, 18 May 2025 13:26:43 GMT
 recorded_with: VCR 6.3.1

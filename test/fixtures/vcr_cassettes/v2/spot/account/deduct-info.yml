@@ -16,9 +16,9 @@ http_interactions:
       Access-Key:
       - "<API_KEY>"
       Access-Sign:
-      - 3HNrRe4vDIAbJY3NPqcNiSa+OTnrRS2AyReWbPZI0vg=
+      - 2yv1ARuEQgPCO8sGSxIUX8j8Q6gGVp09iXN9LXje3gA=
       Access-Timestamp:
-      - '1747574744435'
+      - '1747825212361'
       Access-Passphrase:
       - "<API_PASSPHRASE>"
       Content-Type:
@@ -27,19 +27,23 @@ http_interactions:
       - spot
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
       Date:
-      - Sun, 18 May 2025 13:25:45 GMT
+      - Wed, 21 May 2025 11:00:15 GMT
       Content-Type:
       - application/json
-      Content-Length:
-      - '85'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
       X-Mbx-Used-Remain-Limit:
       - '19'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -47,17 +51,17 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=G0es70hHkWxyLgiUvD0IqXp0SS2YJfpWi0kPt.0178M-1747574745-1.0.1.1-usCs0nG1DIUyb5D1MriRJ4YTeqvElUS.QxNWeIZfuWoZG5bSY1RWvasUetMlds2FRSvx3Ld3rD.FOfe84TLMi5OUfk4mdHGVaeDWqxMrVQU;
-        path=/; expires=Sun, 18-May-25 13:55:45 GMT; domain=.api.bitget.com; HttpOnly;
+      - __cf_bm=ygkD5vaNIYRfpX83ytnoUeYt3fhl2fanV87pwvwg_Vc-1747825215-1.0.1.1-turLdij9FT3QG5EpGc4UP96wn_8VZH5mq8vNHD3NQMPSM.pXkf9gqXb5MFpHub69y3pSWaDUD5eWdppUL32lv6FMK81ikPQvmAgJPee8Ojw;
+        path=/; expires=Wed, 21-May-25 11:30:15 GMT; domain=.api.bitget.com; HttpOnly;
         Secure; SameSite=None
       X-Frame-Options:
       - SAMEORIGIN
       Server:
       - cloudflare
       Cf-Ray:
-      - 941baeb06ea20eaa-AMS
+      - 943391aa0a22eca1-MAD
     body:
-      encoding: UTF-8
-      string: '{"code":"40009","msg":"sign signature error","requestTime":1747574745808,"data":null}'
-  recorded_at: Sun, 18 May 2025 13:25:46 GMT
+      encoding: ASCII-8BIT
+      string: '{"code":"00000","msg":"success","requestTime":1747825215180,"data":{"deduct":"off"}}'
+  recorded_at: Wed, 21 May 2025 11:00:14 GMT
 recorded_with: VCR 6.3.1

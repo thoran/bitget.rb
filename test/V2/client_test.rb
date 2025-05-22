@@ -17,7 +17,9 @@ describe Bitget::V2::Client do
       it "retrieves a list of all coins" do
         VCR.use_cassette('v2/spot/public/coins-when_coin_is_not_supplied') do
           response = client.spot_public_coins
+          _(response['msg']).must_equal('success')
           _(response).must_include('data')
+          _(response['data']).must_be_kind_of(Array)
           _(response['data'].first).must_include('coinId')
           _(response['data'].first).must_include('coin')
           assert_operator response['data'].count, :>, 1500
@@ -58,6 +60,7 @@ describe Bitget::V2::Client do
       it "retrieves a list of all symbols" do
         VCR.use_cassette('v2/spot/public/symbols-when_symbol_is_not_supplied') do
           response = client.spot_public_symbols
+          _(response['msg']).must_equal('success')
           _(response).must_include('data')
           _(response['data'].first).must_include('symbol')
           _(response['data'].first).must_include('baseCoin')
@@ -71,6 +74,7 @@ describe Bitget::V2::Client do
       it "retrieves one symbol" do
         VCR.use_cassette('v2/spot/public/symbols-when_symbol_is_supplied') do
           response = client.spot_public_symbols(symbol: 'BTCUSDT')
+          _(response['msg']).must_equal('success')
           _(response).must_include('data')
           _(response['data'].first).must_include('symbol')
           _(response['data'].first).must_include('baseCoin')
@@ -101,6 +105,7 @@ describe Bitget::V2::Client do
     it "retrieves VIP fee rate information" do
       VCR.use_cassette('v2/spot/market/vip-fee-rate') do
         response = client.spot_market_vip_free_rate
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data'].first).must_include('level')
         _(response['data'].first).must_include('makerFeeRate')
@@ -129,12 +134,13 @@ describe Bitget::V2::Client do
       it "retrieves all tickers" do
         VCR.use_cassette('v2/spot/market/tickers-when_symbol_is_not_supplied') do
           response = client.spot_market_tickers
+          _(response['msg']).must_equal('success')
           _(response).must_include('data')
           _(response['data'].first).must_include('symbol')
           _(response['data'].first).must_include('high24h')
           _(response['data'].first).must_include('low24h')
           _(response['data'].first).must_include('usdtVolume')
-          assert_operator response['data'].count, :>, 0
+          assert_operator response['data'].count, :>, 1
         end
       end
     end
@@ -144,6 +150,7 @@ describe Bitget::V2::Client do
       it "retrieves one ticker" do
         VCR.use_cassette('v2/spot/market/tickers-when_symbol_is_supplied') do
           response = client.spot_market_tickers(symbol: 'BTCUSDT')
+          _(response['msg']).must_equal('success')
           _(response).must_include('data')
           _(response['data'].first).must_include('symbol')
           _(response['data'].first).must_include('high24h')
@@ -175,6 +182,7 @@ describe Bitget::V2::Client do
     it "retrieves merge depth" do
       VCR.use_cassette('v2/spot/market/merge-depth') do
         response = client.spot_market_merge_depth(symbol: 'BTCUSDT')
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data']).must_include('asks')
         _(response['data']).must_include('bids')
@@ -202,6 +210,7 @@ describe Bitget::V2::Client do
     it "retrieves orderbook" do
       VCR.use_cassette('v2/spot/market/orderbook') do
         response = client.spot_market_orderbook(symbol: 'BTCUSDT')
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data']).must_include('asks')
         _(response['data']).must_include('bids')
@@ -229,6 +238,7 @@ describe Bitget::V2::Client do
     it "retrieves candles" do
       VCR.use_cassette('v2/spot/market/candles') do
         response = client.spot_market_candles(symbol: 'BTCUSDT', granularity: '1min')
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data'].first).must_be_kind_of(Array)
         _(response['data'].first.length).must_equal(8) # [timestamp, open, high, low, close, base_volume, usdt_volume, quote_volume]
@@ -254,10 +264,11 @@ describe Bitget::V2::Client do
   describe "#spot_market_history_candles" do
     it "retrieves history candles" do
       VCR.use_cassette('v2/spot/market/history-candles') do
-        response = client.spot_market_history_candles(symbol: 'BTCUSDT', granularity: '1min')
+        response = client.spot_market_history_candles(symbol: 'BTCUSDT', granularity: '1min', end_time: 1690196141868)
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data'].first).must_be_kind_of(Array)
-        _(response['data'].first.length).must_equal(6) # [ts, open, high, low, close, volume]
+        _(response['data'].first.length).must_equal(8) # [ts, open, high, low, close, base volume, USDT volume, quote volume]
       end
     end
 
@@ -268,7 +279,7 @@ describe Bitget::V2::Client do
             mocked_method = Minitest::Mock.new
             mocked_method.expect(:call, nil, [], code: '418', message: "I'm a teapot", body: '')
             client.stub(:log_error, mocked_method) do
-              client.spot_market_history_candles(symbol: 'INVALID', granularity: '1min')
+              client.spot_market_history_candles(symbol: 'INVALID', granularity: '1min', end_time: 1690196141868)
             end
             mocked_method.verify
           end
@@ -281,6 +292,7 @@ describe Bitget::V2::Client do
     it "retrieves recent trades" do
       VCR.use_cassette('v2/spot/market/fills') do
         response = client.spot_market_fills(symbol: 'BTCUSDT')
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data'].first).must_include('price')
         _(response['data'].first).must_include('size')
@@ -309,6 +321,7 @@ describe Bitget::V2::Client do
     it "retrieves market trades history" do
       VCR.use_cassette('v2/spot/market/fills-history') do
         response = client.spot_market_fills_history(symbol: 'BTCUSDT')
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data'].first).must_include('price')
         _(response['data'].first).must_include('size')
@@ -342,13 +355,14 @@ describe Bitget::V2::Client do
           symbol: 'BTCUSDT',
           side: 'buy',
           order_type: 'limit',
-          force: 'normal',
+          force: 'gtc',
           price: '30000',
           size: '0.001'
         )
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data']).must_include('orderId')
-        _(response['data']).must_include('clientOrderId')
+        _(response['data']).must_include('clientOid')
       end
     end
 
@@ -414,24 +428,28 @@ describe Bitget::V2::Client do
   describe "#spot_trade_batch_cancel_replace_order" do
     it "batch cancels and replaces orders" do
       VCR.use_cassette('v2/spot/trade/batch-cancel-replace-order') do
-        orders = [
+        order_list = [
           {
             symbol: 'BTCUSDT',
-            orderId: '123456',
             price: '31000',
-            size: '0.001'
+            size: '0.001',
+            orderId: '123456',
           },
           {
             symbol: 'ETHUSDT',
-            orderId: '123457',
             price: '2000',
-            size: '0.01'
+            size: '0.01',
+            orderId: '123457',
           }
         ]
-        response = client.spot_trade_batch_cancel_replace_order(orders: orders)
+        response = client.spot_trade_batch_cancel_replace_order(order_list: order_list)
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data']).must_be_kind_of(Array)
         _(response['data'].first).must_include('orderId')
+        _(response['data'].first).must_include('clientOid')
+        _(response['data'].first).must_include('success')
+        _(response['data'].first).must_include('msg')
       end
     end
 
@@ -442,7 +460,7 @@ describe Bitget::V2::Client do
             mocked_method = Minitest::Mock.new
             mocked_method.expect(:call, nil, [], code: '418', message: "I'm a teapot", body: '')
             client.stub(:log_error, mocked_method) do
-              client.spot_trade_batch_cancel_replace_order(orders: [{symbol: 'INVALID'}])
+              client.spot_trade_batch_cancel_replace_order(order_list: [{symbol: 'INVALID'}])
             end
             mocked_method.verify
           end
@@ -454,13 +472,11 @@ describe Bitget::V2::Client do
   describe "#spot_trade_cancel_order" do
     it "cancels an order" do
       VCR.use_cassette('v2/spot/trade/cancel-order') do
-        response = client.spot_trade_cancel_order(
-          symbol: 'BTCUSDT',
-          order_id: '123456'
-        )
+        response = client.spot_trade_cancel_order(symbol: 'BTCUSDT')
+        _(response['message']).must_equal('success')
         _(response).must_include('data')
         _(response['data']).must_include('orderId')
-        _(response['data']).must_include('clientOrderId')
+        _(response['data']).must_include('clientOid')
       end
     end
 
@@ -471,10 +487,7 @@ describe Bitget::V2::Client do
             mocked_method = Minitest::Mock.new
             mocked_method.expect(:call, nil, [], code: '418', message: "I'm a teapot", body: '')
             client.stub(:log_error, mocked_method) do
-              client.spot_trade_cancel_order(
-                symbol: 'INVALID',
-                order_id: '123456'
-              )
+              client.spot_trade_cancel_order(symbol: 'INVALID')
             end
             mocked_method.verify
           end
@@ -486,12 +499,12 @@ describe Bitget::V2::Client do
   describe "#spot_trade_batch_orders" do
     it "places batch orders" do
       VCR.use_cassette('v2/spot/trade/batch-orders') do
-        orders = [
+        order_list = [
           {
             symbol: 'BTCUSDT',
             side: 'buy',
             orderType: 'limit',
-            force: 'normal',
+            force: 'gtc',
             price: '30000',
             size: '0.001'
           },
@@ -499,15 +512,20 @@ describe Bitget::V2::Client do
             symbol: 'ETHUSDT',
             side: 'buy',
             orderType: 'limit',
-            force: 'normal',
+            force: 'gtc',
             price: '2000',
             size: '0.01'
           }
         ]
-        response = client.spot_trade_batch_orders(orders: orders)
+        response = client.spot_trade_batch_orders(batch_mode: 'multiple', order_list: order_list)
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
-        _(response['data']).must_be_kind_of(Array)
-        _(response['data'].first).must_include('orderId')
+        _(response['data']).must_include('successList')
+        _(response['data']).must_include('failureList')
+        _(response['data']['successList']).must_be_kind_of(Array)
+        _(response['data']['successList'].first).must_include('orderId')
+        _(response['data']['successList'].first).must_include('clientOid')
+        _(response['data']['failureList']).must_be_kind_of(Array)
       end
     end
 
@@ -518,7 +536,7 @@ describe Bitget::V2::Client do
             mocked_method = Minitest::Mock.new
             mocked_method.expect(:call, nil, [], code: '418', message: "I'm a teapot", body: '')
             client.stub(:log_error, mocked_method) do
-              client.spot_trade_batch_orders(orders: [{symbol: 'INVALID'}])
+              client.spot_trade_batch_orders(order_list: [{symbol: 'INVALID'}])
             end
             mocked_method.verify
           end
@@ -530,13 +548,17 @@ describe Bitget::V2::Client do
   describe "#spot_trade_batch_cancel_order" do
     it "cancels batch orders" do
       VCR.use_cassette('v2/spot/trade/batch-cancel-order') do
-        response = client.spot_trade_batch_cancel_order(
-          symbol: 'BTCUSDT',
-          order_ids: ['123456', '123457']
-        )
+        response = client.spot_trade_batch_cancel_order(symbol: 'BTCUSDT', order_list: ['123456', '123457'])
+        _(response['message']).must_equal('success')
         _(response).must_include('data')
-        _(response['data']).must_be_kind_of(Array)
-        _(response['data'].first).must_include('orderId')
+        _(response['data']).must_be_kind_of(Hash)
+        _(response['data']).must_include('successList')
+        _(response['data']['successList'].first).must_include('orderId')
+        _(response['data']['successList'].first).must_include('clientOid')
+        _(response['data']).must_include('failureList')
+        _(response['data']['failureList'].first).must_include('orderId')
+        _(response['data']['failureList'].first).must_include('clientOid')
+        _(response['data']['failureList'].first).must_include('errorMsg')
       end
     end
 
@@ -549,7 +571,7 @@ describe Bitget::V2::Client do
             client.stub(:log_error, mocked_method) do
               client.spot_trade_batch_cancel_order(
                 symbol: 'INVALID',
-                order_ids: ['123456', '123457']
+                order_list: ['123456', '123457']
               )
             end
             mocked_method.verify
@@ -563,6 +585,7 @@ describe Bitget::V2::Client do
     it "cancels all orders for a symbol" do
       VCR.use_cassette('v2/spot/trade/cancel-symbol-order') do
         response = client.spot_trade_cancel_symbol_order(symbol: 'BTCUSDT')
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data']).must_be_kind_of(Hash)
         _(response['data']).must_include('symbol')
@@ -588,15 +611,29 @@ describe Bitget::V2::Client do
   describe "#spot_trade_order_info" do
     it "retrieves order information" do
       VCR.use_cassette('v2/spot/trade/orderInfo') do
-        response = client.spot_trade_order_info(
-          symbol: 'BTCUSDT',
-          order_id: '123456'
-        )
+        response = client.spot_trade_order_info(order_id: '123456')
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
-        _(response['data']).must_include('orderId')
-        _(response['data']).must_include('clientOrderId')
-        _(response['data']).must_include('symbol')
-        _(response['data']).must_include('status')
+        _(response['data']).must_be_kind_of(Array)
+        _(response['data'].first).must_include('userId')
+        _(response['data'].first).must_include('symbol')
+        _(response['data'].first).must_include('orderId')
+        _(response['data'].first).must_include('clientOid')
+        _(response['data'].first).must_include('price')
+        _(response['data'].first).must_include('size')
+        _(response['data'].first).must_include('orderType')
+        _(response['data'].first).must_include('side')
+        _(response['data'].first).must_include('status')
+        _(response['data'].first).must_include('priceAvg')
+        _(response['data'].first).must_include('baseVolume')
+        _(response['data'].first).must_include('quoteVolume')
+        _(response['data'].first).must_include('enterPointSource')
+        _(response['data'].first).must_include('feeDetail')
+        _(response['data'].first).must_include('orderSource')
+        _(response['data'].first).must_include('cancelReason')
+        _(response['data'].first).must_include('cTime')
+        _(response['data'].first).must_include('orderType')
+        _(response['data'].first).must_include('uTime')
       end
     end
 
@@ -607,10 +644,7 @@ describe Bitget::V2::Client do
             mocked_method = Minitest::Mock.new
             mocked_method.expect(:call, nil, [], code: '418', message: "I'm a teapot", body: '')
             client.stub(:log_error, mocked_method) do
-              client.spot_trade_order_info(
-                symbol: 'INVALID',
-                order_id: '123456'
-              )
+              client.spot_trade_order_info(order_id: 'INVALID')
             end
             mocked_method.verify
           end
@@ -623,12 +657,13 @@ describe Bitget::V2::Client do
     it "gets unfilled orders" do
       VCR.use_cassette('v2/spot/trade/unfilled-orders') do
         response = client.spot_trade_unfilled_orders(symbol: 'BTCUSDT')
+        _(response['message']).must_equal('success')
         _(response).must_include('data')
         _(response['data']).must_be_kind_of(Array)
-        # _(response['data'].first).must_include('orderId')
-        # _(response['data'].first).must_include('clientOrderId')
-        # _(response['data'].first).must_include('symbol')
-        # _(response['data'].first).must_include('status')
+        _(response['data'].first).must_include('orderId')
+        _(response['data'].first).must_include('clientOid')
+        _(response['data'].first).must_include('symbol')
+        _(response['data'].first).must_include('status')
       end
     end
 
@@ -652,12 +687,29 @@ describe Bitget::V2::Client do
     it "gets history orders" do
       VCR.use_cassette('v2/spot/trade/history-orders') do
         response = client.spot_trade_history_orders(symbol: 'BTCUSDT')
+        _(response['message']).must_equal('success')
         _(response).must_include('data')
         _(response['data']).must_be_kind_of(Array)
-        # _(response['data'].first).must_include('orderId')
-        # _(response['data'].first).must_include('clientOrderId')
-        # _(response['data'].first).must_include('symbol')
-        # _(response['data'].first).must_include('status')
+        _(response['data'].first).must_include('userId')
+        _(response['data'].first).must_include('symbol')
+        _(response['data'].first).must_include('orderId')
+        _(response['data'].first).must_include('clientOid')
+        _(response['data'].first).must_include('price')
+        _(response['data'].first).must_include('size')
+        _(response['data'].first).must_include('orderType')
+        _(response['data'].first).must_include('side')
+        _(response['data'].first).must_include('status')
+        _(response['data'].first).must_include('priceAvg')
+        _(response['data'].first).must_include('baseVolume')
+        _(response['data'].first).must_include('quoteVolume')
+        _(response['data'].first).must_include('enterPointSource')
+        _(response['data'].first).must_include('feeDetail')
+        _(response['data'].first).must_include('orderSource')
+        _(response['data'].first).must_include('cTime')
+        _(response['data'].first).must_include('uTime')
+        _(response['data'].first).must_include('tpslType')
+        _(response['data'].first).must_include('cancelReason')
+        _(response['data'].first).must_include('triggerPrice')
       end
     end
 
@@ -681,13 +733,26 @@ describe Bitget::V2::Client do
     it "gets trade fills" do
       VCR.use_cassette('v2/spot/trade/fills') do
         response = client.spot_trade_fills(symbol: 'BTCUSDT')
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data']).must_be_kind_of(Array)
-        # _(response['data'].first).must_include('orderId')
-        # _(response['data'].first).must_include('symbol')
-        # _(response['data'].first).must_include('fillId')
-        # _(response['data'].first).must_include('fillPrice')
-        # _(response['data'].first).must_include('fillQuantity')
+        _(response['data'].first).must_include('userId')
+        _(response['data'].first).must_include('symbol')
+        _(response['data'].first).must_include('orderId')
+        _(response['data'].first).must_include('tradeId')
+        _(response['data'].first).must_include('orderType')
+        _(response['data'].first).must_include('side')
+        _(response['data'].first).must_include('priceAvg')
+        _(response['data'].first).must_include('size')
+        _(response['data'].first).must_include('amount')
+        _(response['data'].first).must_include('feeDetail')
+        _(response['data'].first['feeDetail']).must_include('deduction')
+        _(response['data'].first['feeDetail']).must_include('feeCoin')
+        _(response['data'].first['feeDetail']).must_include('totalDeductionFee')
+        _(response['data'].first['feeDetail']).must_include('totalFee')
+        _(response['data'].first).must_include('tradeScope')
+        _(response['data'].first).must_include('cTime')
+        _(response['data'].first).must_include('uTime')
       end
     end
 
@@ -717,12 +782,14 @@ describe Bitget::V2::Client do
           side: 'buy',
           order_type: 'limit',
           size: '0.001',
+          trigger_type: 'mark_price',
           trigger_price: '30000',
           execute_price: '30000'
         )
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data']).must_include('orderId')
-        _(response['data']).must_include('clientOrderId')
+        _(response['data']).must_include('clientOid')
       end
     end
 
@@ -752,14 +819,11 @@ describe Bitget::V2::Client do
   describe "#spot_trade_modify_plan_order" do
     it "modifies a plan order" do
       VCR.use_cassette('v2/spot/trade/modify-plan-order') do
-        response = client.spot_trade_modify_plan_order(
-          order_id: '123456',
-          trigger_price: '31000',
-          execute_price: '31000',
-          size: '0.002'
-        )
+        response = client.spot_trade_modify_plan_order(order_id: '123456')
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
-        _(response['data']).must_include('success')
+        _(response['data']).must_include('orderId')
+        _(response['data']).must_include('clientOid')
       end
     end
 
@@ -770,12 +834,7 @@ describe Bitget::V2::Client do
             mocked_method = Minitest::Mock.new
             mocked_method.expect(:call, nil, [], code: '418', message: "I'm a teapot", body: '')
             client.stub(:log_error, mocked_method) do
-              client.spot_trade_modify_plan_order(
-                order_id: 'INVALID',
-                trigger_price: '31000',
-                execute_price: '31000',
-                size: '0.002'
-              )
+              client.spot_trade_modify_plan_order(order_id: 'INVALID')
             end
             mocked_method.verify
           end
@@ -788,8 +847,11 @@ describe Bitget::V2::Client do
     it "cancels a plan order" do
       VCR.use_cassette('v2/spot/trade/cancel-plan-order') do
         response = client.spot_trade_cancel_plan_order(order_id: '123456')
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
-        _(response['data']).must_include('success')
+        _(response).must_be_kind_of(Hash)
+        _(response['data']).must_include('result')
+        _(response['data']['result']).must_equal('success')
       end
     end
 
@@ -813,6 +875,7 @@ describe Bitget::V2::Client do
     it "gets current plan orders" do
       VCR.use_cassette('v2/spot/trade/current-plan-order') do
         response = client.spot_trade_current_plan_order(symbol: 'BTCUSDT')
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data']).must_be_kind_of(Hash)
         _(response['data']).must_include('nextFlag')
@@ -841,10 +904,12 @@ describe Bitget::V2::Client do
     it "gets plan sub order" do
       VCR.use_cassette('v2/spot/trade/plan-sub-order') do
         response = client.spot_trade_plan_sub_order(order_id: '123456')
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data']).must_be_kind_of(Array)
         _(response['data'].first).must_include('orderId')
-        _(response['data'].first).must_include('symbol')
+        _(response['data'].first).must_include('price')
+        _(response['data'].first).must_include('type')
         _(response['data'].first).must_include('status')
       end
     end
@@ -868,14 +933,31 @@ describe Bitget::V2::Client do
   describe "#spot_trade_history_plan_order" do
     it "gets history plan orders" do
       VCR.use_cassette('v2/spot/trade/history-plan-order') do
-        response = client.spot_trade_history_plan_order(symbol: 'BTCUSDT')
+        response = client.spot_trade_history_plan_order(
+          symbol: 'BTCUSDT',
+          start_time: 1747754739537,
+          end_time: 1747755739537
+        )
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
-        _(response['data']).must_be_kind_of(Array)
-        _(response['data'].first).must_include('orderId')
-        _(response['data'].first).must_include('symbol')
-        _(response['data'].first).must_include('status')
-        _(response['data'].first).must_include('triggerPrice')
-        _(response['data'].first).must_include('executePrice')
+        _(response['data']).must_be_kind_of(Hash)
+        _(response['data']).must_include('nextFlag')
+        _(response['data']).must_include('idLessThan')
+        _(response['data']).must_include('orderList')
+        _(response['data']['orderList'].first).must_include('orderId')
+        _(response['data']['orderList'].first).must_include('clientOid')
+        _(response['data']['orderList'].first).must_include('symbol')
+        _(response['data']['orderList'].first).must_include('size')
+        _(response['data']['orderList'].first).must_include('executePrice')
+        _(response['data']['orderList'].first).must_include('triggerPrice')
+        _(response['data']['orderList'].first).must_include('status')
+        _(response['data']['orderList'].first).must_include('orderType')
+        _(response['data']['orderList'].first).must_include('side')
+        _(response['data']['orderList'].first).must_include('planType')
+        _(response['data']['orderList'].first).must_include('triggerType')
+        _(response['data']['orderList'].first).must_include('enterPointSource')
+        _(response['data']['orderList'].first).must_include('uTime')
+        _(response['data']['orderList'].first).must_include('cTime')
       end
     end
 
@@ -886,7 +968,11 @@ describe Bitget::V2::Client do
             mocked_method = Minitest::Mock.new
             mocked_method.expect(:call, nil, [], code: '418', message: "I'm a teapot", body: '')
             client.stub(:log_error, mocked_method) do
-              client.spot_trade_history_plan_order(symbol: 'INVALID')
+              client.spot_trade_history_plan_order(
+                symbol: 'INVALID',
+                start_time: 1747754739537,
+                end_time: 1747755739537
+              )
             end
             mocked_method.verify
           end
@@ -898,10 +984,8 @@ describe Bitget::V2::Client do
   describe "#spot_trade_batch_cancel_plan_order" do
     it "cancels batch plan orders" do
       VCR.use_cassette('v2/spot/trade/batch-cancel-plan-order') do
-        response = client.spot_trade_batch_cancel_plan_order(
-          symbol: 'BTCUSDT',
-          order_ids: ['123456', '123457']
-        )
+        response = client.spot_trade_batch_cancel_plan_order(symbol_list: ['BTCUSDT', 'ETHUSDT'])
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data']).must_be_kind_of(Hash)
         _(response['data']).must_include('successList')
@@ -916,10 +1000,7 @@ describe Bitget::V2::Client do
             mocked_method = Minitest::Mock.new
             mocked_method.expect(:call, nil, [], code: '418', message: "I'm a teapot", body: '')
             client.stub(:log_error, mocked_method) do
-              client.spot_trade_batch_cancel_plan_order(
-                symbol: 'INVALID',
-                order_ids: ['123456', '123457']
-              )
+              client.spot_trade_batch_cancel_plan_order(symbol_list: ['INVALID'])
             end
             mocked_method.verify
           end
@@ -934,6 +1015,7 @@ describe Bitget::V2::Client do
     it "retrieves account information" do
       VCR.use_cassette('v2/spot/account/info') do
         response = client.spot_account_info
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data']).must_include('userId')
         _(response['data']).must_include('channelCode')
@@ -961,6 +1043,7 @@ describe Bitget::V2::Client do
     it "retrieves account assets" do
       VCR.use_cassette('v2/spot/account/assets') do
         response = client.spot_account_assets
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data'].first).must_include('coin')
         _(response['data'].first).must_include('available')
@@ -989,12 +1072,20 @@ describe Bitget::V2::Client do
   describe "#spot_account_subaccount_assets" do
     it "gets subaccount assets" do
       VCR.use_cassette('v2/spot/account/subaccount-assets') do
-        response = client.spot_account_subaccount_assets(subaccount_id: '123456')
+        response = client.spot_account_subaccount_assets
+        _(response['message']).must_equal('success')
         _(response).must_include('data')
         _(response['data']).must_be_kind_of(Array)
-        # _(response['data'].first).must_include('coin')
-        # _(response['data'].first).must_include('available')
-        # _(response['data'].first).must_include('frozen')
+        _(response['data'].first).must_include('id')
+        _(response['data'].first).must_include('userId')
+        _(response['data'].first).must_include('assetsList')
+        _(response['data'].first['assetsList']).must_be_kind_of(Array)
+        _(response['data'].first['assetsList'].first).must_include('coin')
+        _(response['data'].first['assetsList'].first).must_include('available')
+        _(response['data'].first['assetsList'].first).must_include('limitAvailable')
+        _(response['data'].first['assetsList'].first).must_include('frozen')
+        _(response['data'].first['assetsList'].first).must_include('locked')
+        _(response['data'].first['assetsList'].first).must_include('uTime')
       end
     end
 
@@ -1005,7 +1096,7 @@ describe Bitget::V2::Client do
             mocked_method = Minitest::Mock.new
             mocked_method.expect(:call, nil, [], code: '418', message: "I'm a teapot", body: '')
             client.stub(:log_error, mocked_method) do
-              client.spot_account_subaccount_assets(subaccount_id: 'INVALID')
+              client.spot_account_subaccount_assets
             end
             mocked_method.verify
           end
@@ -1018,14 +1109,19 @@ describe Bitget::V2::Client do
     it "gets account bills" do
       VCR.use_cassette('v2/spot/account/bills') do
         response = client.spot_account_bills
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data']).must_be_kind_of(Array)
-        _(response['data'].first).must_include('id')
+        _(response['data'].first).must_include('billId')
         _(response['data'].first).must_include('coin')
-        _(response['data'].first).must_include('amount')
-        _(response['data'].first).must_include('fee')
-        _(response['data'].first).must_include('type')
-        _(response['data'].first).must_include('status')
+        _(response['data'].first).must_include('bizOrderId')
+        _(response['data'].first).must_include('coin')
+        _(response['data'].first).must_include('groupType')
+        _(response['data'].first).must_include('businessType')
+        _(response['data'].first).must_include('size')
+        _(response['data'].first).must_include('balance')
+        _(response['data'].first).must_include('fees')
+        _(response['data'].first).must_include('cTime')
       end
     end
 
@@ -1049,13 +1145,19 @@ describe Bitget::V2::Client do
     it "gets main-sub transfer records" do
       VCR.use_cassette('v2/spot/account/sub-main-trans-record') do
         response = client.spot_account_sub_main_trans_record
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data']).must_be_kind_of(Array)
-        _(response['data'].first).must_include('id')
         _(response['data'].first).must_include('coin')
-        _(response['data'].first).must_include('amount')
-        _(response['data'].first).must_include('type')
         _(response['data'].first).must_include('status')
+        _(response['data'].first).must_include('toType')
+        _(response['data'].first).must_include('fromType')
+        _(response['data'].first).must_include('size')
+        _(response['data'].first).must_include('ts')
+        _(response['data'].first).must_include('clientOid')
+        _(response['data'].first).must_include('transferId')
+        _(response['data'].first).must_include('fromUserId')
+        _(response['data'].first).must_include('toUserId')
       end
     end
 
@@ -1066,7 +1168,7 @@ describe Bitget::V2::Client do
             mocked_method = Minitest::Mock.new
             mocked_method.expect(:call, nil, [], code: '418', message: "I'm a teapot", body: '')
             client.stub(:log_error, mocked_method) do
-              client.spot_account_sub_main_trans_record(subaccount_id: 'INVALID')
+              client.spot_account_sub_main_trans_record
             end
             mocked_method.verify
           end
@@ -1079,14 +1181,18 @@ describe Bitget::V2::Client do
     it "gets transfer records" do
       VCR.use_cassette('v2/spot/account/transferRecords') do
         response = client.spot_account_transfer_records
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data']).must_be_kind_of(Array)
-        _(response['data'].first).must_include('id')
         _(response['data'].first).must_include('coin')
-        _(response['data'].first).must_include('amount')
-        _(response['data'].first).must_include('fromType')
-        _(response['data'].first).must_include('toType')
         _(response['data'].first).must_include('status')
+        _(response['data'].first).must_include('toType')
+        _(response['data'].first).must_include('fromType')
+        _(response['data'].first).must_include('fromSymbol')
+        _(response['data'].first).must_include('size')
+        _(response['data'].first).must_include('ts')
+        _(response['data'].first).must_include('clientOid')
+        _(response['data'].first).must_include('transferId')
       end
     end
 
@@ -1109,9 +1215,10 @@ describe Bitget::V2::Client do
   describe "#spot_account_switch_deduct" do
     it "switches BGB deduct" do
       VCR.use_cassette('v2/spot/account/switch-deduct') do
-        response = client.spot_account_switch_deduct(deduct: true)
+        response = client.spot_account_switch_deduct(deduct: 'on')
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
-        _(response['data']).must_include('success')
+        _(response['data']).must_equal(true)
       end
     end
 
@@ -1135,8 +1242,9 @@ describe Bitget::V2::Client do
     it "gets BGB deduct info" do
       VCR.use_cassette('v2/spot/account/deduct-info') do
         response = client.spot_account_deduct_info
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
-        _(response['data']).must_include('deductEnable')
+        _(response['data']).must_include('deduct')
       end
     end
 
@@ -1159,11 +1267,8 @@ describe Bitget::V2::Client do
   describe "#spot_wallet_modify_deposit_account" do
     it "modifies deposit account" do
       VCR.use_cassette('v2/spot/wallet/modify-deposit-account') do
-        response = client.spot_wallet_modify_deposit_account(
-          coin: 'USDT',
-          chain: 'TRC20',
-          address: '0x1234567890abcdef'
-        )
+        response = client.spot_wallet_modify_deposit_account(account_type: 'spot', coin: 'TRX')
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data']).must_include('success')
       end
@@ -1177,9 +1282,8 @@ describe Bitget::V2::Client do
             mocked_method.expect(:call, nil, [], code: '418', message: "I'm a teapot", body: '')
             client.stub(:log_error, mocked_method) do
               client.spot_wallet_modify_deposit_account(
-                coin: 'INVALID',
-                chain: 'INVALID',
-                address: '0x1234567890abcdef'
+                account_type: 'INVALID',
+                coin: 'INVALID'
               )
             end
             mocked_method.verify
@@ -1193,13 +1297,16 @@ describe Bitget::V2::Client do
     it "transfers funds between accounts" do
       VCR.use_cassette('v2/spot/wallet/transfer') do
         response = client.spot_wallet_transfer(
-          from_account: 'spot',
-          to_account: 'margin',
+          from_type: 'spot',
+          to_type: 'isolated_margin',
+          amount: '100',
           coin: 'USDT',
-          amount: '100'
+          symbol: 'TRXUSDT'
         )
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
-        _(response['data']).must_include('success')
+        _(response['data']).must_include('transferId')
+        _(response['data']).must_include('clientOid')
       end
     end
 
@@ -1211,10 +1318,11 @@ describe Bitget::V2::Client do
             mocked_method.expect(:call, nil, [], code: '418', message: "I'm a teapot", body: '')
             client.stub(:log_error, mocked_method) do
               client.spot_wallet_transfer(
-                from_account: 'INVALID',
-                to_account: 'INVALID',
-                coin: 'INVALID',
-                amount: '100'
+                from_type: 'spot',
+                to_type: 'isolated_margin',
+                amount: '100',
+                coin: 'USDT',
+                symbol: 'TRXUSDT'
               )
             end
             mocked_method.verify
@@ -1227,13 +1335,11 @@ describe Bitget::V2::Client do
   describe "#spot_wallet_transfer_coin_info" do
     it "gets transferable coin list" do
       VCR.use_cassette('v2/spot/wallet/transfer-coin-info') do
-        response = client.spot_wallet_transfer_coin_info(
-          from_account: 'spot',
-          to_account: 'margin'
-        )
+        response = client.spot_wallet_transfer_coin_info(from_type: 'spot', to_type: 'isolated_margin')
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data']).must_be_kind_of(Array)
-        _(response['data'].first).must_include('coin')
+        _(response['data']).must_include('AGLD')
       end
     end
 
@@ -1245,8 +1351,8 @@ describe Bitget::V2::Client do
             mocked_method.expect(:call, nil, [], code: '418', message: "I'm a teapot", body: '')
             client.stub(:log_error, mocked_method) do
               client.spot_wallet_transfer_coin_info(
-                from_account: 'INVALID',
-                to_account: 'INVALID'
+                from_type: 'INVALID',
+                to_type: 'INVALID'
               )
             end
             mocked_method.verify
@@ -1260,13 +1366,16 @@ describe Bitget::V2::Client do
     it "transfers funds between subaccounts" do
       VCR.use_cassette('v2/spot/wallet/subaccount-transfer') do
         response = client.spot_wallet_subaccount_transfer(
-          subaccount_id: '123456',
-          coin: 'USDT',
+          from_type: 'spot',
+          to_type: 'isolated_margin',
           amount: '100',
-          direction: 'in'
+          coin: 'USDT'
         )
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
-        _(response['data']).must_include('success')
+        _(response['data']).must_be_kind_of(Hash)
+        _(response['data']).must_include('transferId')
+        _(response['data']).must_include('clientOid')
       end
     end
 
@@ -1278,10 +1387,10 @@ describe Bitget::V2::Client do
             mocked_method.expect(:call, nil, [], code: '418', message: "I'm a teapot", body: '')
             client.stub(:log_error, mocked_method) do
               client.spot_wallet_subaccount_transfer(
-                subaccount_id: 'INVALID',
+                from_type: 'INVALID',
+                to_type:'INVALID',
                 coin: 'INVALID',
-                amount: '100',
-                direction: 'INVALID'
+                amount: '100'
               )
             end
             mocked_method.verify
@@ -1296,12 +1405,17 @@ describe Bitget::V2::Client do
       VCR.use_cassette('v2/spot/wallet/withdrawal') do
         response = client.spot_wallet_withdrawal(
           coin: 'USDT',
-          chain: 'TRC20',
+          transfer_type: 'on_chain',
           address: '0x1234567890abcdef',
-          amount: '100'
+          chain: 'TRC20',
+          size: 100
         )
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
-        _(response['data']).must_include('id')
+        _(response).must_be_kind_of(Hash)
+        _(response['msg']).must_equal('success')
+        _(response['data']).must_include('orderId')
+        _(response['data']).must_include('clientOid')
       end
     end
 
@@ -1314,9 +1428,10 @@ describe Bitget::V2::Client do
             client.stub(:log_error, mocked_method) do
               client.spot_wallet_withdrawal(
                 coin: 'INVALID',
-                chain: 'INVALID',
+                transfer_type: 'on_chain',
                 address: '0x1234567890abcdef',
-                amount: '100'
+                chain: 'TRC20',
+                size: 100
               )
             end
             mocked_method.verify
@@ -1331,7 +1446,7 @@ describe Bitget::V2::Client do
       VCR.use_cassette('v2/spot/wallet/cancel-withdrawal') do
         response = client.spot_wallet_cancel_withdrawal(order_id: '123456')
         _(response).must_include('data')
-        _(response['data']).must_include('success')
+        _(response['data']).must_equal('success')
       end
     end
 
@@ -1354,10 +1469,8 @@ describe Bitget::V2::Client do
   describe "#spot_wallet_deposit_address" do
     it "gets deposit address" do
       VCR.use_cassette('v2/spot/wallet/deposit-address') do
-        response = client.spot_wallet_deposit_address(
-          coin: 'USDT',
-          chain: 'TRC20'
-        )
+        response = client.spot_wallet_deposit_address(coin: 'USDT', chain: 'TRC20')
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data']).must_include('address')
         _(response['data']).must_include('chain')
@@ -1388,14 +1501,17 @@ describe Bitget::V2::Client do
     it "gets subaccount deposit address" do
       VCR.use_cassette('v2/spot/wallet/subaccount-deposit-address') do
         response = client.spot_wallet_subaccount_deposit_address(
-          subaccount_id: '123456',
+          subaccount_user_id: '123456',
           coin: 'USDT',
           chain: 'TRC20'
         )
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data']).must_include('address')
         _(response['data']).must_include('chain')
         _(response['data']).must_include('coin')
+        _(response['data']).must_include('tag')
+        _(response['data']).must_include('url')
       end
     end
 
@@ -1407,7 +1523,7 @@ describe Bitget::V2::Client do
             mocked_method.expect(:call, nil, [], code: '418', message: "I'm a teapot", body: '')
             client.stub(:log_error, mocked_method) do
               client.spot_wallet_subaccount_deposit_address(
-                subaccount_id: 'INVALID',
+                subaccount_user_id: 'INVALID',
                 coin: 'INVALID',
                 chain: 'INVALID'
               )
@@ -1422,17 +1538,21 @@ describe Bitget::V2::Client do
   describe "#spot_wallet_subaccount_deposit_records" do
     it "gets subaccount deposit records" do
       VCR.use_cassette('v2/spot/wallet/subaccount-deposit-records') do
-        response = client.spot_wallet_subaccount_deposit_records(
-          subaccount_id: '123456',
-          coin: 'BTC',
-          status: 'success'
-        )
+        response = client.spot_wallet_subaccount_deposit_records(subaccount_user_id: '123456')
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data']).must_be_kind_of(Array)
+        _(response['data'].first).must_include('orderId')
+        _(response['data'].first).must_include('tradeId')
         _(response['data'].first).must_include('coin')
-        _(response['data'].first).must_include('amount')
+        _(response['data'].first).must_include('size')
         _(response['data'].first).must_include('status')
+        _(response['data'].first).must_include('toAddress')
+        _(response['data'].first).must_include('dest')
         _(response['data'].first).must_include('chain')
+        _(response['data'].first).must_include('fromAddress')
+        _(response['data'].first).must_include('cTime')
+        _(response['data'].first).must_include('uTime')
       end
     end
 
@@ -1443,11 +1563,7 @@ describe Bitget::V2::Client do
             mocked_method = Minitest::Mock.new
             mocked_method.expect(:call, nil, [], code: '418', message: "I'm a teapot", body: '')
             client.stub(:log_error, mocked_method) do
-              client.spot_wallet_subaccount_deposit_records(
-                subaccount_id: 'INVALID',
-                coin: 'BTC',
-                status: 'success'
-              )
+              client.spot_wallet_subaccount_deposit_records(subaccount_user_id: 'INVALID')
             end
             mocked_method.verify
           end
@@ -1459,17 +1575,26 @@ describe Bitget::V2::Client do
   describe "#spot_wallet_withdrawal_records" do
     it "gets withdrawal records" do
       VCR.use_cassette('v2/spot/wallet/withdrawal-records') do
-        response = client.spot_wallet_withdrawal_records(
-          coin: 'BTC',
-          status: 'success'
-        )
+        response = client.spot_wallet_withdrawal_records(start_time: 1690196141868, end_time: 1690197141868)
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data']).must_be_kind_of(Array)
-        # _(response['data'].first).must_include('coin')
-        # _(response['data'].first).must_include('amount')
-        # _(response['data'].first).must_include('status')
-        # _(response['data'].first).must_include('chain')
-        # _(response['data'].first).must_include('address')
+        _(response['data'].first).must_include('orderId')
+        _(response['data'].first).must_include('tradeId')
+        _(response['data'].first).must_include('coin')
+        _(response['data'].first).must_include('dest')
+        _(response['data'].first).must_include('clientOid')
+        _(response['data'].first).must_include('type')
+        _(response['data'].first).must_include('tag')
+        _(response['data'].first).must_include('size')
+        _(response['data'].first).must_include('fee')
+        _(response['data'].first).must_include('status')
+        _(response['data'].first).must_include('toAddress')
+        _(response['data'].first).must_include('fromAddress')
+        _(response['data'].first).must_include('confirm')
+        _(response['data'].first).must_include('chain')
+        _(response['data'].first).must_include('cTime')
+        _(response['data'].first).must_include('uTime')
       end
     end
 
@@ -1480,10 +1605,7 @@ describe Bitget::V2::Client do
             mocked_method = Minitest::Mock.new
             mocked_method.expect(:call, nil, [], code: '418', message: "I'm a teapot", body: '')
             client.stub(:log_error, mocked_method) do
-              client.spot_wallet_withdrawal_records(
-                coin: 'INVALID',
-                status: 'success'
-              )
+              client.spot_wallet_withdrawal_records(start_time: 1690196141868, end_time: 1690197141868)
             end
             mocked_method.verify
           end
@@ -1496,16 +1618,24 @@ describe Bitget::V2::Client do
     it "gets deposit records" do
       VCR.use_cassette('v2/spot/wallet/deposit-records') do
         response = client.spot_wallet_deposit_records(
-          coin: 'BTC',
-          status: 'success'
+          start_time: 1690196141868,
+          end_time: 1690197141868
         )
+        _(response['msg']).must_equal('success')
         _(response).must_include('data')
         _(response['data']).must_be_kind_of(Array)
+        _(response['data'].first).must_include('orderId')
+        _(response['data'].first).must_include('tradeId')
         _(response['data'].first).must_include('coin')
-        _(response['data'].first).must_include('amount')
+        _(response['data'].first).must_include('type')
+        _(response['data'].first).must_include('size')
         _(response['data'].first).must_include('status')
+        _(response['data'].first).must_include('toAddress')
+        _(response['data'].first).must_include('dest')
         _(response['data'].first).must_include('chain')
-        _(response['data'].first).must_include('address')
+        _(response['data'].first).must_include('fromAddress')
+        _(response['data'].first).must_include('cTime')
+        _(response['data'].first).must_include('uTime')
       end
     end
 
@@ -1517,8 +1647,9 @@ describe Bitget::V2::Client do
             mocked_method.expect(:call, nil, [], code: '418', message: "I'm a teapot", body: '')
             client.stub(:log_error, mocked_method) do
               client.spot_wallet_deposit_records(
-                coin: 'INVALID',
-                status: 'success'
+                start_time: 1690196141868,
+                end_time: 1690197141868,
+                coin: 'INVALID'
               )
             end
             mocked_method.verify

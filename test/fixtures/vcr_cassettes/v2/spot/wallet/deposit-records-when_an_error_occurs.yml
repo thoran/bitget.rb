@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.bitget.com/api/v2/spot/wallet/deposit-records?coin=INVALID&status=success
+    uri: https://api.bitget.com/api/v2/spot/wallet/deposit-records?coin=INVALID&endTime=1690197141868&startTime=1690196141868
     body:
       encoding: US-ASCII
       string: ''

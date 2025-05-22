@@ -16,9 +16,9 @@ http_interactions:
       Access-Key:
       - "<API_KEY>"
       Access-Sign:
-      - gzTT0El3Z/eM7XpnIazR5IA8c9fPWgDnG/6lI73hO+A=
+      - oZlZ9bC3jxomd5OL/AYsHLgSwK1yzhzynehEIAncxR8=
       Access-Timestamp:
-      - '1747574844038'
+      - '1747788415945'
       Access-Passphrase:
       - "<API_PASSPHRASE>"
       Content-Type:
@@ -27,19 +27,23 @@ http_interactions:
       - spot
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
       Date:
-      - Sun, 18 May 2025 13:27:25 GMT
+      - Wed, 21 May 2025 00:46:57 GMT
       Content-Type:
       - application/json
-      Content-Length:
-      - '85'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
       X-Mbx-Used-Remain-Limit:
       - '19'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -47,17 +51,17 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=Eq5ajvGRna3vMsf13YMgHOPdgxQb3BKZPdNud_6LG64-1747574845-1.0.1.1-DFeCvIw7L7VQW2941hy3H4U1Qmn3UgnIQImymW9jYInS2BPqePGGkJKMnppiJP20.7JT6W_piy9W5IfJMJ6WhZuD38phGNzzJsK4f.me5Jg;
-        path=/; expires=Sun, 18-May-25 13:57:25 GMT; domain=.api.bitget.com; HttpOnly;
+      - __cf_bm=Akd.xM_HMg5u5T0tn1aoR8LDSd0V2ztmhZdvnI62NIo-1747788417-1.0.1.1-PFp5sx2e9g4KLz.EX_pH0vYLWYR0v7q_xbaz2sKb7qDYRGhlr.FyzyAbqrJX_3KEG3kOVeMK.SCGPRlwslewbwmB_YjmV3ucvKyavRwLzvY;
+        path=/; expires=Wed, 21-May-25 01:16:57 GMT; domain=.api.bitget.com; HttpOnly;
         Secure; SameSite=None
       X-Frame-Options:
       - SAMEORIGIN
       Server:
       - cloudflare
       Cf-Ray:
-      - 941bb11f0f0b2d8e-AMS
+      - 94300f49efde0324-MAD
     body:
-      encoding: UTF-8
-      string: '{"code":"40009","msg":"sign signature error","requestTime":1747574845408,"data":null}'
-  recorded_at: Sun, 18 May 2025 13:27:25 GMT
+      encoding: ASCII-8BIT
+      string: '{"code":"00000","msg":"success","requestTime":1747788417714,"data":[{"coin":"USDT","status":"Successful","toType":"spot","fromType":"usdt_futures","size":"3000.00000000","ts":"1744674721240","clientOid":"1295825189997600768","transferId":"149096092","fromUserId":"7955878595","toUserId":"7955878595"}]}'
+  recorded_at: Wed, 21 May 2025 00:46:58 GMT
 recorded_with: VCR 6.3.1
